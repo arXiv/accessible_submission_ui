@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    
+    <div class="banner banner-black">
+      <img class="logo" src="black_logo.png" alt="Black logo" />
+      Black Banner
+    </div>
+    <div class="banner banner-red">
+      <img class="logo" src="red_logo.png" alt="Red logo" />
+      Red Banner
+    </div>
+
+    <div class="navbar">
+      <a href="{{ url_for('page1') }}">Start</a>
+      <a href="{{ url_for('page2') }}">Contact Information</a>
+      <a href="{{ url_for('page3') }}">Terms and Conditions</a>
+      <a href="{{ url_for('page4') }}">Licensing</a>
+      <a href="{{ url_for('page5') }}">Add Files</a>
+      <a href="{{ url_for('page6') }}">Processing</a>
+      <a href="{{ url_for('page7') }}">PDF Preview</a>
+      <a href="{{ url_for('page8') }}">HTML Preview</a>
+      <a href="{{ url_for('page9') }}">Metadata</a>
+      <a href="{{ url_for('page10') }}">Review</a>
+      <a href="{{ url_for('page11') }}">Category</a>
+      <a class="active" href="{{ url_for('page12') }}">Finalize Submission</a>
+    </div>
+
+    <nav class="breadcrumb">
+      <ul>
+        <li class="current-page">{{ page_title }}</li>
+      </ul>
+    </nav>
+    
+    <div class="content">
+      <p>12</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+    </div>
+  </body>
+</html>

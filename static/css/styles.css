@@ -1,0 +1,138 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 50px;
+  color: white;
+}
+
+/* Style the black banner */
+.banner-black {
+  background-color: black;
+}
+
+/* Style the red banner */
+.banner-red {
+  background-color: #b31b1b;
+}
+
+/* Style the logo */
+.logo {
+  height: 30px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.navbar {
+  background-color: white;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar a.active {
+  color: #ff8c00;
+  border-bottom: 2px solid #ff8c00;
+}
+
+body {
+  position: relative;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top:0px;
+}
+
+.report-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  font-size: 20px;
+}
+
+.report-box {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: white;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.text-report {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.take-screenshot {
+  margin-top: 10px;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+footer {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+}
+
+.breadcrumb {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.breadcrumb ul li {
+  margin-right: 5px;
+}
+
+.breadcrumb ul li:not(:last-child)::after {
+  content: "/";
+  margin-left: 5px;
+}
+
+.breadcrumb ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.breadcrumb ul li a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb ul li.current-page {
+  color: #000;
+  text-decoration: none;
+  pointer-events: none;
+}
+
