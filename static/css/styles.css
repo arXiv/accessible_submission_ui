@@ -97,9 +97,42 @@ body {
 
 footer {
   position: fixed;
+  background-color: #f2f2f2;
   bottom: 20px;
   right: 20px;
   font-size: 30px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.back-button {
+  color: gray;
+  background-color: white;
+  border: 2px solid gray;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.next-button {
+  color: white;
+  background-color: #D58B25;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .breadcrumb {
@@ -136,4 +169,6 @@ footer {
   text-decoration: none;
   pointer-events: none;
 }
+
+
 

@@ -1,0 +1,73 @@
+<!doctype html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+
+  <div class="banner banner-black" id="cu-identity">
+    <div id="cu-logo">
+      <a href='https://www.cornell.edu'>
+        <img class="logo" src="https://static.arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University">
+      </a>
+    </div>
+  </div>
+
+    <!--
+    <div id="support-ack">
+      <a href="https://confluence.cornell.edu/x/ALlRF">We gratefully acknowledge support from<br> the Simons Foundation and member institutions.
+      </a>
+    </div>
+  </div>-->
+
+  <div class="banner banner-red" id="header" >
+    <h1 class="arxiv-logo">
+      <img class='logo' src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo">
+      <span style="font-size: 20px">>Submit</span>
+    </h1>
+    <!--
+    <div class="header_nav">Logged in as <b>{{uid}}</b> |
+      <a href="/help">Help</a> |
+      <a href="/user">My Account</a>
+      <a href="/logout">Logout</a>
+    </div>-->
+  </div>
+
+  <div class="navbar">
+    <a class="{% if page_title == 'start' %}active{% endif %}" href="{{ url_for('start') }}">Start</a>
+    <a class="{% if page_title == 'contactInformation' %}active{% endif %}" href="{{ url_for('contactInformation') }}">Contact Information</a>
+    <a class="{% if page_title == 'termsConditions' %}active{% endif %}" href="{{ url_for('termsConditions') }}">Terms and Conditions</a>
+    <a class="{% if page_title == 'licensing' %}active{% endif %}" href="{{ url_for('licensing') }}">Licensing</a>
+    <a class="{% if page_title == 'addFiles' %}active{% endif %}" href="{{ url_for('addFiles') }}">Add Files</a>
+    <a class="{% if page_title == 'processing' %}active{% endif %}" href="{{ url_for('processing') }}">Processing</a>
+    <a class="{% if page_title == 'pdfPreview' %}active{% endif %}" href="{{ url_for('pdfPreview') }}">PDF Preview</a>
+    <a class="{% if page_title == 'htmlPreview' %}active{% endif %}" href="{{ url_for('htmlPreview') }}">HTML Preview</a>
+    <a class="{% if page_title == 'metadata' %}active{% endif %}" href="{{ url_for('metadata') }}">Metadata</a>
+    <a class="{% if page_title == 'review' %}active{% endif %}" href="{{ url_for('review') }}">Review</a>
+    <a class="{% if page_title == 'category' %}active{% endif %}" href="{{ url_for('category') }}">Category</a>
+    <a class="{% if page_title == 'finalizeSubmission' %}active{% endif %}" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a>
+  </div>
+
+  <section class="content">
+    {% block content %}{% endblock %}
+  </section>
+
+  <footer>
+      <div class="button-container">
+        {% if prev_page %}
+          <a href="{{url_for(prev_page)}}" class="back-button">Back</a>
+        {% else %}
+          <a class="back-button">Cancel</a>
+        {% endif %}
+        {% if next_page %}
+          <a href="{{url_for(next_page)}}" class="next-button">CONTINUE</a>
+        {% else %}
+          <a href="" class="next-button">Submit</a>
+        {% endif %}
+      </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/example.js') }}"></script>
+  </body>
+</html>
