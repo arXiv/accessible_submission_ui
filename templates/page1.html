@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    
+  </head>
+  <body>
+    <nav class="breadcrumb">
+      <ul>
+        <li class="current-page">{{ page_title }}</li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <p>1</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+    </div>
+
+    <footer>
+      <ul>
+        <a href="{{ url_for('page2') }}">Next Page</a>
+      </ul>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/example.js') }}"></script>
+  </body>
+</html>
