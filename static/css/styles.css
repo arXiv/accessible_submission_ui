@@ -239,27 +239,27 @@ form label {
 }
 
 .privacy .arrow {
-  cursor: pointer; /* Change cursor to pointer on hover */
+  cursor: pointer; 
   /* display: flex; */
   /* align-items: center; */
 }
 
 .privacy .arrow i {
-  margin-right: 10px; /* Add some space between the arrow icon and text */
-  transition: transform 0.3s ease-in-out; /* Add a transition effect to the icon */
+  margin-right: 10px; 
+  transition: transform 0.3s ease-in-out; 
 }
 
 .privacy .policy {
-  display: none; /* Hide the privacy policy section by default */
-  margin-top: 10px; /* Add some space between the arrow and policy section */
+  display: none; 
+  margin-top: 10px; 
 }
 
 .privacy.open .arrow i {
-  transform: rotate(180deg); /* Rotate the arrow icon when the privacy section is open */
+  transform: rotate(180deg); 
 }
 
 .privacy.open .policy {
-  display: block; /* Show the privacy policy section when the privacy section is open */
+  display: block; 
 }
 
 .policy-box {
