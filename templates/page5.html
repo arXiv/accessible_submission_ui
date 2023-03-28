@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="{{ url_for('page1') }}">{{ page_titles['page1'] }}</a></li>
+        <li><a href="{{ url_for('page2') }}">{{ page_titles['page2'] }}</a></li>
+        <li><a href="{{ url_for('page3') }}">{{ page_titles['page3'] }}</a></li>
+        <li><a href="{{ url_for('page4') }}">{{ page_titles['page4'] }}</a></li>
+        <li class="current-page">{{ page_title }}</li>
+      </ul>
+    </nav>
+    <div class="content">
+      <p>5</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+    </div>
+    <footer>
+      <ul>
+        <a href="{{ url_for('page6') }}">Next Page</a>
+      </ul>
+    </footer>
+  </body>
+</html>

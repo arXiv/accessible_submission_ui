@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page_title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <nav class="breadcrumb">
+      <ul>
+        <li><a href="{{ url_for('page1') }}">{{ page_titles['page1'] }}</a></li>
+        <li><a href="{{ url_for('page2') }}">{{ page_titles['page2'] }}</a></li>
+        <li><a href="{{ url_for('page3') }}">{{ page_titles['page3'] }}</a></li>
+        <li><a href="{{ url_for('page4') }}">{{ page_titles['page4'] }}</a></li>
+        <li><a href="{{ url_for('page5') }}">{{ page_titles['page5'] }}</a></li>
+        <li><a href="{{ url_for('page5') }}">{{ page_titles['page6'] }}</a></li>
+        <li><a href="{{ url_for('page7') }}">{{ page_titles['page7'] }}</a></li>
+        <li><a href="{{ url_for('page8') }}">{{ page_titles['page8'] }}</a></li>
+        <li><a href="{{ url_for('page9') }}">{{ page_titles['page9'] }}</a></li>
+        <li><a href="{{ url_for('page10') }}">{{ page_titles['page10'] }}</a></li>
+        <li><a href="{{ url_for('page11') }}">{{ page_titles['page11'] }}</a></li>
+        <li class="current-page">{{ page_title }}</li>
+      </ul>
+    </nav>
+    <div class="content">
+      <p>12</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+      <p>Test, Test, Test. Test, Test, Test. Test, Test, Test.</p>
+    </div>
+  </body>
+</html>
