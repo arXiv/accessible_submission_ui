@@ -1,0 +1,389 @@
+body {
+	margin: 0;
+	padding:0;
+/*        background: #F1E1D8; */
+        background: #FAFAFA;
+        font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+}
+
+a:link, a:visited, a:active {
+        text-decoration: none;
+        }
+
+a:hover {
+        text-decoration: underline;
+        }
+code, tt, pre {
+	font-family: courier;
+	font-size: 90%;
+	font-weight: bold
+}
+pre {
+	padding: 5px;
+	border-width: 1px;
+	border-style: solid;
+}
+.note {
+	font-weight: bold;
+	color: #b31b1b;
+}
+.changelog {
+        color: #aa9999;
+}
+.new {
+        color: #aa3333;
+}
+
+/***************************************
+*       Define masthead styles
+***************************************/
+
+div#masthead {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        text-align: right;
+	background-color: #b31b1b;
+        }
+
+#cu-logo {
+  position: relative;
+  /*	top: 0; */
+  left: -20px;
+  top: 2px;
+  /* width: 300px; */
+  height: 49px;
+}
+
+#masthead h1 {
+        display: block;
+        margin: 0;
+        padding:0;
+        position: absolute;
+        top: 5px;
+        left: 15px; /* 40px with div.lines */
+        font-size: 28px;
+        font-weight: normal;
+	color: white;
+        }
+
+/***************************************
+*       Define menu bar styles
+***************************************/
+
+div#menubar {
+        margin: 0;
+        padding: 5px;
+        text-align: right;
+	background-color: #AFAFAF;
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #fff;
+        }
+
+#menubar ul {
+        float: left;
+        margin: 0;
+        padding: 0;
+        }
+
+#menubar li {
+        display: inline; /* let's li's go next to each other */
+        margin: 0;
+        padding: 0 10px 0 0;
+        }
+#menubar a, a.visited{
+	font-weight: bold;
+	color: #fff;
+	}
+
+#menubar form {
+        display: inline;
+        margin: 0;
+        padding: 0;
+        }
+
+#menubar input {
+        margin: 0;
+        padding: 0;
+        }
+#menubar image{
+	align="middle";
+	}
+
+/***************************************
+*       Define main body styles
+***************************************/
+
+div#main {
+        padding: 10px;
+        }
+#main h1 {
+	margin: 5px 0;
+	font-size: 24px;
+}
+#main h2 {
+	margin: 5px 0;
+	padding: 5px;
+	font-size: 20px;
+	background-color: #f0eee4;
+}
+#main h3 {
+	margin: 5px 0;
+	font-size: 16px;
+	text-decoration: underline;
+}
+
+/***************************************
+*       Define left index styles
+***************************************/
+
+div#lindex {
+	position: absolute;
+	left: 30px;
+	top: 160px;
+	width: 380px;
+        }
+
+#lindex h2 {
+	background-color: #fff;
+	padding: 5px 0;
+}
+
+#lindex ul{
+	margin: 0;
+	padding: 0 25px 15px 25px;
+}
+
+
+/***************************************
+*       Define right index styles
+***************************************/
+
+div#rindex {
+	position: absolute;
+	left: 450px;
+	top: 160px;
+	width: 380px;
+        }
+
+#rindex h2 {
+	background-color: #fff;
+	padding: 5px 0;
+}
+
+#rindex ul{
+	margin: 0;
+	padding: 0 25px 15px 25px;
+}
+
+/***************************************
+*    Define error box styles
+***************************************/
+div#error {
+	margin: 5px;
+	padding: 10px;
+	width: 550px;
+	background-color: lightgoldenrodyellow;
+	border-width: 1px;
+	border-style: solid;
+}
+
+/****************************************
+ * Table styles
+ * *************************************/
+
+table.tbcss
+{ text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	color: #404040;
+/*	width: 900px;*/
+	background-color: #fafafa;
+	border: 1px #3a4b6d solid;
+	border-spacing: 0px; }
+
+/* following style for emphasis of one cell */
+table.tbcss td.sel
+{
+	background-color: #FFCCCC;
+}
+
+td.tbhead
+{ border-bottom: 2px solid #3a4b6d;
+	border-left: 1px solid #3a4b6d;
+	background-color: #CCC;
+	text-align: left;
+	text-indent: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	color: #404040; }
+
+td.tbbod,td.tbbod_odd {
+	border-bottom: 1px solid #3a4b6d;
+	border-top: 0px;
+	border-left: 1px solid #3a4b6d;
+	border-right: 0px;
+    margin-right: 1em;
+	text-align: left;
+    padding: 4px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	color: #404040;
+}
+
+td.tbbod {
+    background-color: #FAFAFA;
+}
+
+td.tbbod_odd {
+    background-color: #F2F2F2;
+}
+
+a.linkbutton {
+    border: 2px solid #6e6e6e;
+    border-style: double;
+    padding: 3px;
+    background-color: #eee;
+}
+
+a.sortbutton {
+	color: #B31B1B;
+    font-weight: bold;
+    font-size: 78%;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+
+label[for=email_mods] {
+    float: right;
+}
+input#email_mods {
+    float: right;
+}
+
+.mlabel, .mglabel {
+  font-weight: bold;
+  text-align: right;
+  margin-right: 1em;
+  display: block;
+}
+.mglabel {
+   color: #909090;
+}
+.mglabel a:link, .mglabel a:visited, .mglabel a:active {
+        text-decoration: none;
+        color: #909090;
+        }
+.mglabel a:hover {
+   text-decoration: underline;
+}
+.mlabel a:link, .mlabel a:visited, .mlabel a:active {
+        text-decoration: none;
+        color: #000000;
+        }
+.mlabel a:hover {
+   text-decoration: underline;
+}
+
+.mvalue, .mgvalue {
+   font-weight: normal;
+}
+.mgvalue {
+   color: #909090;
+}
+
+.message {
+#    min-height: 20px;
+    font-size: 110%;
+    border: 2px solid #3ac90e;
+    padding: 3px;
+    background: #efefef;
+}
+.error {
+    font-size: 110%;
+    border: 2px solid #B31B1B;
+    padding: 3px;
+    background: #efefef;
+}
+
+form#metaedit {
+   border: 1px solid #666666;
+   text-align: left;
+   font-family: Monospace, Arial, Helvetica, sans-serif;
+   font-size: 1em;
+   background-color: #CCCCCC;
+   color: #000000;
+}
+
+/* otherwise the input fields have different font size */
+form#metaedit input {
+   font-size: 1em;
+}
+
+table#tmetaedit th {
+   float: right;
+   font-family: 'Open Sans', sans-serif;
+}
+
+/* Following are for admin/user/view page */
+
+label {
+  float: left:
+  text-align: right;
+  margin-right: 0.2em;
+  display: block;
+}
+.label {
+    font-weight: bold;
+}
+
+td.editbar { background-color:rgb(128,128,255);
+             color: white;
+             font-size: 80%;
+             font-family: monospace;
+             font-weight: bold;
+ 	           text-decoration: none;
+           }
+.editbar   { color: white;
+             font-size: 80%;
+             font-family: monospace;
+             font-weight: bold;
+ 	           text-decoration: none;
+    	     }
+
+span.underline {
+    text-decoration: underline;
+}
+
+span.boldblack {
+    font-weight: bold;
+    color: black;
+}
+
+.proposal-wrap {
+ width::100%;
+}
+.proposal-wrap .prop-row * {
+ margin:0px;
+ padding-top: 5px;
+ padding-bottom: 5px;
+ width:19.5%;
+}
+
+.primary span {
+ font-weight:bold;
+}
+
+.prop-row span {
+ display:inline-block;
+ text-align:center;
+}
+.prop-row input {
+ display:inline-block;
+}

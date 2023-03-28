@@ -1,0 +1,6 @@
+div.error {
+    outline: red;
+    outline-style: solid;
+    outline-width: thick;
+}
+    
