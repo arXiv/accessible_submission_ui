@@ -223,3 +223,56 @@ form label {
   margin-right: 10px; 
   text-decoration: underline;
 }
+
+.checkbox-container{
+  display:flex;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.arrow{
+  margin-left:10px;
+}
+
+.privacy {
+  margin-top: 20px; 
+}
+
+.privacy .arrow {
+  cursor: pointer; /* Change cursor to pointer on hover */
+  /* display: flex; */
+  /* align-items: center; */
+}
+
+.privacy .arrow i {
+  margin-right: 10px; /* Add some space between the arrow icon and text */
+  transition: transform 0.3s ease-in-out; /* Add a transition effect to the icon */
+}
+
+.privacy .policy {
+  display: none; /* Hide the privacy policy section by default */
+  margin-top: 10px; /* Add some space between the arrow and policy section */
+}
+
+.privacy.open .arrow i {
+  transform: rotate(180deg); /* Rotate the arrow icon when the privacy section is open */
+}
+
+.privacy.open .policy {
+  display: block; /* Show the privacy policy section when the privacy section is open */
+}
+
+.policy-box {
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-right: 100px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.check-arrow{
+  display:flex;
+  align-items: center;
+}
