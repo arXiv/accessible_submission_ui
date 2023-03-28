@@ -55,6 +55,12 @@ body {
   margin-top:0px;
 }
 
+.content{
+  margin-left: 30px;
+  margin-right: 0px;
+  margin-top:0px;
+}
+
 .report-btn {
   position: fixed;
   bottom: 10px;
@@ -170,5 +176,20 @@ footer {
   pointer-events: none;
 }
 
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
 
+#page1_header {
+  margin-bottom: 20px;
+}
 
+#page1_input {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#input_title {
+  width: 400px;
+}
