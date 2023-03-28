@@ -1,5 +1,41 @@
 {% extends 'base.html' %}
 
+<!-- haven't build the modal -->
+
 {% block content %}
+<div id='page4_header'>
+    <h1>Choose a License</h1>
+    <p> All articles and source files posted on arXiv.org can be viewed and downloaded by anyone.</p>
+    <p>Please select the license you would like to use to make your content available. Your chosen license is irrevocable. For all licenses here, except CC Zero, the original copyright holder retains ownership after posting on arXiv.</p>
+    <p>Please review our licensing table and/or <a href="https://info.arxiv.org/help/license/index.html">license information</a>. It is the author's responsibility to choose the right license.</p>
+</div>
+
+<form>
+    <label>
+        <input type="radio" name="color">
+        CC BY: Creative Commons Attribution
+      </label>
+      <label>
+        <input type="radio" name="color">
+        CC BY-SA: Creative Commons Attribution-ShareAlike
+      </label>
+      <label>
+        <input type="radio" name="color">
+        CC BY-NC-SA: Creative Commons Attribution-Noncommercial-ShareAlike
+      </label>
+      <label>
+        <input type="radio" name="color">
+        CC BY-NC-ND: Creative Commons Attribution-NonCommercial-NoDerivatives
+      </label>
+      <label>
+        <input type="radio" name="color">
+        arXiv.org perpetual, non-exclusive license
+      </label>
+      <label>
+        <input type="radio" name="color">
+        CC Zero: No Rights Reserved
+      </label>
+      <p>If you need help with the licensing please contact us at a</p>
+    </form>
 
 {% endblock %}
