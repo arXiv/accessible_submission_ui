@@ -1,11 +1,10 @@
 /* Style the banner */
 .banner {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: left;
   font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase;
   height: 50px;
   color: white;
 }
@@ -13,11 +12,18 @@
 /* Style the black banner */
 .banner-black {
   background-color: black;
+  align-items: center;
 }
 
 /* Style the red banner */
 .banner-red {
   background-color: #b31b1b;
+  align-items: center;
+}
+
+.arxiv-logo {
+  display: flex;
+  align-items: center;
 }
 
 /* Style the logo */
@@ -25,6 +31,11 @@
   height: 30px;
   margin-right: 10px;
   margin-left: 10px;
+}
+
+.logo-text{
+  font-size: 20px;
+  margin-left: 10px; 
 }
 
 .navbar {
