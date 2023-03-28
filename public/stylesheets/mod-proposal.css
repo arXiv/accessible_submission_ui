@@ -1,0 +1,142 @@
+/*
+ * Styles for proposed category forms for moderators
+ */
+
+
+#propose-form #resond-dialog-classifictions, 
+#reject-dialog-form #resond-dialog-classifictions {
+	
+	border-bottom: 1px dotted #b7b6b3;
+    font-size: 14px;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+}
+
+#propose-form #resond-dialog-classifictions,
+#reject-form #resond-dialog-classifictions {
+  
+    display: block;
+    margin-top: 10px;
+}
+
+#propose-form #resond-dialog-classifictions + br,
+#reject-form #resond-dialog-classifictions + br {
+  
+    display: none;
+}
+
+#propose-form #primary_proposal_chosen, 
+#reject-dialog-form #primary_proposal_chosen {
+	
+	width: 100%;
+
+}
+
+#primary_proposal_chosen,
+#secondary_proposal_chosen {
+
+  width: 100% !important;
+
+}
+
+#propose-form #secondary_proposal_chosen, 
+#reject-dialog-form #secondary_proposal_chosen {
+	
+	width: 100%
+
+}
+
+#propose-form label, 
+#reject-dialog-form label {
+	
+	padding-bottom: 5px;
+	font-weight: bold;
+    text-align: left;
+
+}
+
+
+#propose-form .classifiers-label, 
+#reject-dialog-form .classifiers-label {
+
+  	padding: 5px 6px 4px 6px;
+  	background-color: #4d4e53;
+  	color: #fff;
+  	display: inline-block;
+  	margin-top: 5px;
+}
+
+
+#reject-dialog-form #reject-form-prop-alts {
+
+	background-color: #e9eaed;
+    padding: 0 5px 10px 10px;
+    width: 98%;
+
+}
+
+#reject-form #reject-form-prop-alts {
+
+    margin-top: -5px;
+}
+
+#reject-dialog-form #reject-form-prop-alts .reject-form-prop-alts-p {
+	
+	font-weight: bold;
+  	background-color: #7a7c83;
+    color: #fff;
+    margin-top: -10px;
+    padding: 10px;
+    width: 80%;
+}
+
+#respond-radio {
+
+    width: 100% !important;
+}
+
+#respond-radio input,
+#respond-radio label,
+#reject-radio input,
+#reject-radio label{
+    
+    display: inline;
+    float: none;
+}
+
+input[type="radio"]:disabled+label{ 
+  
+  opacity: 0.5; 
+  
+} 
+
+#respond-accept-secondary:disabled { 
+  
+  display: none;
+  
+} 
+
+table {
+
+	border-spacing: 6px;
+}
+
+.mlabel, 
+.mglabel {
+
+	vertical-align: text-top;
+	color: #7a7c83;
+	font-weight: bold;
+
+}
+
+.chosen-container-active .chosen-choices {
+
+  
+  background: #fff url('/images/icon-magnifier.png') no-repeat right top;
+}
+
+.chosen-container-multi .chosen-choices {
+
+  background: #fff url('/images/icon-magnifier.png') no-repeat right top;
+}
