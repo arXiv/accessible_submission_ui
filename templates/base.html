@@ -3,36 +3,38 @@
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page_title }}</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/arXivCat.css') }}" />
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/selectCombo.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/submitSubjClass.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/js.cookie.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/toggle-guide.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/terms_conditions.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/example.js') }}"></script>
+    </head>
   </head>
 
-  <div class="banner banner-black" id="cu-identity">
+  <div id="cu-identity">
     <div id="cu-logo">
-      <a href='https://www.cornell.edu'>
-        <img class="logo" src="https://static.arxiv.org/static/browse/0.3.4/images/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University">
-      </a>
+      <a href="https://www.cornell.edu/"><img src="//static.arxiv.org/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" border="0"></a>
+    </div>
+    <div id="support-ack">
+      <a href="https://confluence.cornell.edu/x/ALlRF">We gratefully acknowledge support from<br> the Simons Foundation and member institutions.</a>
     </div>
   </div>
 
-    <!--
-    <div id="support-ack">
-      <a href="https://confluence.cornell.edu/x/ALlRF">We gratefully acknowledge support from<br> the Simons Foundation and member institutions.
-      </a>
-    </div>
-  </div>-->
-
-  <div class="banner banner-red" id="header" >
+  <div id="header" >
     <h1 class="arxiv-logo">
-      <img class='logo' src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo">
-      <span class='logo-text' style="font-size: 20px;">>Submit</span>
+      <a href="/">
+      <img class='logo' src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"></a> &gt; submit </h1>
+      <div class="header_nav">Logged in as <b>fake</b> |
+        <a href="/help">Help</a> |
+        <a href="/user">My Account</a> |        <a href="/logout">Logout</a>
+      </div>
     </h1>
-    <!--
-    <div class="header_nav">Logged in as <b>{{uid}}</b> |
-      <a href="/help">Help</a> |
-      <a href="/user">My Account</a>
-      <a href="/logout">Logout</a>
-    </div>-->
   </div>
 
   <div class="navbar">
@@ -69,6 +71,5 @@
       </div>
   </footer>
 
-  <script src="{{ url_for('static', filename='js/example.js') }}"></script>
   </body>
 </html>

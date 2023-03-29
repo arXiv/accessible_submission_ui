@@ -23,4 +23,3 @@ termsLink.addEventListener('click', (e) => {
         policy.style.display = 'none';
       }
 });
-

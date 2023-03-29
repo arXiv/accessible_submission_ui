@@ -1,0 +1,13 @@
+/* CSS for Metadata Edit form */
+form#metaedit {
+   border: 1px solid #666666;
+   text-align: right;
+   font-family: Verdana, Arial, Helvetica, san-serif;
+   font-size: 1em;
+   background-color: #CCCCCC;
+   color: #000000;
+}
+
+input {
+   border: 1px solid #666666;
+}
