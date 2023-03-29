@@ -1,0 +1,59 @@
+.left-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px; /* adjust the width as needed */
+    background-color: #fff; /* set the background color as needed */
+    border-right: 1px solid #ccc; /* add a border to the right side for separation */
+    overflow-y: auto; /* add scrollbars if necessary */
+  }
+
+  .content{
+    margin-left: 200px;
+  }
+  
+  .page-categories {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-categories li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-categories a {
+    display: block;
+    padding: 10px;
+    color: #000; /* set the link color as needed */
+    text-decoration: none;
+  }
+  
+  .page-categories a:hover {
+    background-color: #f0f0f0; /* set the background color when hovering over a link */
+  }
+  
+  .page-names {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-names li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .page-names a {
+    display: block;
+    padding: 10px 20px;
+    color: #888; /* set the link color as needed */
+    text-decoration: none;
+  }
+  
+  .page-names a:hover {
+    background-color: #f0f0f0; /* set the background color when hovering over a link */
+  }
+  

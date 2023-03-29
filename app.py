@@ -16,10 +16,16 @@ page_titles = {
     'page12': 'Page 12 Title',
 }
 
+categories_names = {
+    'category1': 'Category 1_title',
+    'category2': 'Category 2_title',
+    'category3': 'Category 3_title',
+}
+
 
 @app.route('/')
 def page1():
-    return render_template('page1.html', page_titles=page_titles, page_title=page_titles['page1'])
+    return render_template('page1.html', page_titles=page_titles, page_title=page_titles['page1'], categories_names=categories_names)
 
 @app.route('/page2/')
 def page2():
