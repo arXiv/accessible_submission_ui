@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/arXivCat.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}" />
 
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/selectCombo.js') }}"></script>
@@ -37,22 +38,25 @@
     </h1>
   </div>
 
-  <div class="navbar">
-    <a class="{% if page_title == 'start' %}active{% endif %}" href="{{ url_for('start') }}">Start</a>
-    <a class="{% if page_title == 'contactInformation' %}active{% endif %}" href="{{ url_for('contactInformation') }}">Contact Information</a>
-    <a class="{% if page_title == 'termsConditions' %}active{% endif %}" href="{{ url_for('termsConditions') }}">Terms and Conditions</a>
-    <a class="{% if page_title == 'licensing' %}active{% endif %}" href="{{ url_for('licensing') }}">Licensing</a>
-    <a class="{% if page_title == 'addFiles' %}active{% endif %}" href="{{ url_for('addFiles') }}">Add Files</a>
-    <a class="{% if page_title == 'processing' %}active{% endif %}" href="{{ url_for('processing') }}">Processing</a>
-    <a class="{% if page_title == 'pdfPreview' %}active{% endif %}" href="{{ url_for('pdfPreview') }}">PDF Preview</a>
-    <a class="{% if page_title == 'htmlPreview' %}active{% endif %}" href="{{ url_for('htmlPreview') }}">HTML Preview</a>
-    <a class="{% if page_title == 'metadata' %}active{% endif %}" href="{{ url_for('metadata') }}">Metadata</a>
-    <a class="{% if page_title == 'review' %}active{% endif %}" href="{{ url_for('review') }}">Review</a>
-    <a class="{% if page_title == 'category' %}active{% endif %}" href="{{ url_for('category') }}">Category</a>
-    <a class="{% if page_title == 'finalizeSubmission' %}active{% endif %}" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a>
-  </div>
+  <nav class="left-sidebar" style = "width: 210px;">
+    <ul>
+      <li><a class="{% if page_title == 'start' %}active{% endif %}" href="{{ url_for('start') }}">Start</a></li>
+      <li><a class="{% if page_title == 'contactInformation' %}active{% endif %}" href="{{ url_for('contactInformation') }}">Contact Information</a></li>
+      <li><a class="{% if page_title == 'termsConditions' %}active{% endif %}" href="{{ url_for('termsConditions') }}">Terms and Conditions</a></li>
+      <li><a class="{% if page_title == 'licensing' %}active{% endif %}" href="{{ url_for('licensing') }}">Licensing</a></li>
+      <li><a class="{% if page_title == 'addFiles' %}active{% endif %}" href="{{ url_for('addFiles') }}">Add Files</a></li>
+      <li><a class="{% if page_title == 'processing' %}active{% endif %}" href="{{ url_for('processing') }}">Processing</a></li>
+      <li><a class="{% if page_title == 'pdfPreview' %}active{% endif %}" href="{{ url_for('pdfPreview') }}">PDF Preview</a></li>
+      <li><a class="{% if page_title == 'htmlPreview' %}active{% endif %}" href="{{ url_for('htmlPreview') }}">HTML Preview</a></li>
+      <li><a class="{% if page_title == 'metadata' %}active{% endif %}" href="{{ url_for('metadata') }}">Metadata</a></li>
+      <li><a class="{% if page_title == 'review' %}active{% endif %}" href="{{ url_for('review') }}">Review</a></li>
+      <li><a class="{% if page_title == 'category' %}active{% endif %}" href="{{ url_for('category') }}">Category</a></li>
+      <li><a class="{% if page_title == 'finalizeSubmission' %}active{% endif %}" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a></li>
+    </ul>
+  </nav>
+  
 
-  <section class="content">
+  <section class="content" style="margin-left: 210px;">
     {% block content %}{% endblock %}
   </section>
 

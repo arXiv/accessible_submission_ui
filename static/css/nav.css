@@ -1,0 +1,35 @@
+.left-sidebar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50px; 
+}
+/* content margin is at styles */
+/* Change as_author * 2 */
+
+.left-sidebar a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+
+
+.left-sidebar a.active {
+  background-color: #f0f0f0; 
+}
+
+.left-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-sidebar li {
+  display: block;
+  margin: 0;
+  padding: 5px 0;
+}
