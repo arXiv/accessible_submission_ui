@@ -4,10 +4,10 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 50px; 
+  width: 210px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e1e1e1;
 }
-/* content margin is at styles */
-/* Change as_author * 2 */
 
 .left-sidebar a {
   display: block;
@@ -16,10 +16,31 @@
   color: #000;
 }
 
+.category-links {
+  display: none;
+  padding-left: 30px; /* Increase this value to add more indentation */
+}
 
+.category-toggle {
+  cursor: pointer;
+}
+
+.category-toggle::before {
+  content: '+';
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.category-toggle.active::before {
+  content: '-';
+}
+
+.category-links.active {
+  display: block;
+}
 
 .left-sidebar a.active {
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
 }
 
 .left-sidebar ul {

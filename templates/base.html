@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/arXivCat.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}" />
+      .category-links {
+        display: none;
+      }
+      
+      .category-toggle {
+        cursor: pointer;
+      }
+      
+      .category-toggle::before {
+        content: '+';
+        display: inline-block;
+        margin-right: 5px;
+      }
+      
+      .category-toggle.active::before {
+        content: '-';
+      }
+      
+      .category-links.active {
+        display: block;
+      }
+    
+      
+    </style>
+    <script>
+      function getActiveCategory() {
+        const pageTitle = "{{ page_title }}";
+        switch (pageTitle) {
+          case "start":
+          case "contactInformation":
+          case "termsConditions":
+          case "licensing":
+            return 0;
+          case "addFiles":
+          case "processing":
+          case "pdfPreview":
+          case "htmlPreview":
+            return 1;
+          case "metadata":
+          case "review":
+          case "category":
+          case "finalizeSubmission":
+            return 2;
+          default:
+            return -1;
+        }
+      }
+    </script>
 
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/selectCombo.js') }}"></script>
@@ -38,22 +86,38 @@
     </h1>
   </div>
 
-  <nav class="left-sidebar" style = "width: 210px;">
+  <nav class="left-sidebar" style="width: 210px">
     <ul>
-      <li><a class="{% if page_title == 'start' %}active{% endif %}" href="{{ url_for('start') }}">Start</a></li>
-      <li><a class="{% if page_title == 'contactInformation' %}active{% endif %}" href="{{ url_for('contactInformation') }}">Contact Information</a></li>
-      <li><a class="{% if page_title == 'termsConditions' %}active{% endif %}" href="{{ url_for('termsConditions') }}">Terms and Conditions</a></li>
-      <li><a class="{% if page_title == 'licensing' %}active{% endif %}" href="{{ url_for('licensing') }}">Licensing</a></li>
-      <li><a class="{% if page_title == 'addFiles' %}active{% endif %}" href="{{ url_for('addFiles') }}">Add Files</a></li>
-      <li><a class="{% if page_title == 'processing' %}active{% endif %}" href="{{ url_for('processing') }}">Processing</a></li>
-      <li><a class="{% if page_title == 'pdfPreview' %}active{% endif %}" href="{{ url_for('pdfPreview') }}">PDF Preview</a></li>
-      <li><a class="{% if page_title == 'htmlPreview' %}active{% endif %}" href="{{ url_for('htmlPreview') }}">HTML Preview</a></li>
-      <li><a class="{% if page_title == 'metadata' %}active{% endif %}" href="{{ url_for('metadata') }}">Metadata</a></li>
-      <li><a class="{% if page_title == 'review' %}active{% endif %}" href="{{ url_for('review') }}">Review</a></li>
-      <li><a class="{% if page_title == 'category' %}active{% endif %}" href="{{ url_for('category') }}">Category</a></li>
-      <li><a class="{% if page_title == 'finalizeSubmission' %}active{% endif %}" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a></li>
+      <li class="category">
+        <a href="#" class="category-toggle">Category 1</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('start') }}" class="{% if page_title == 'start' %}active{% endif %}">Start</a></li>
+          <li><a href="{{ url_for('contactInformation') }}" class="{% if page_title == 'contactInformation' %}active{% endif %}">Contact Information</a></li>
+          <li><a href="{{ url_for('termsConditions') }}" class="{% if page_title == 'termsConditions' %}active{% endif %}">Terms and Conditions</a></li>
+          <li><a href="{{ url_for('licensing') }}" class="{% if page_title == 'licensing' %}active{% endif %}">Licensing</a></li>
+        </ul>
+      </li>
+      <li class="category">
+        <a href="#" class="category-toggle">Category 2</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('addFiles') }}" class="{% if page_title == 'addFiles' %}active{% endif %}">Add Files</a></li>
+          <li><a href="{{ url_for('processing') }}" class="{% if page_title == 'processing' %}active{% endif %}">Processing</a></li>
+          <li><a href="{{ url_for('pdfPreview') }}" class="{% if page_title == 'pdfPreview' %}active{% endif %}">PDF Preview</a></li>
+          <li><a href="{{ url_for('htmlPreview') }}" class="{% if page_title == 'htmlPreview' %}active{% endif %}">HTML Preview</a></li>
+        </ul>
+      </li>
+      <li class="category">
+        <a href="#" class="category-toggle" >Category 3</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('metadata') }}" class="{% if page_title == 'metadata' %}active{% endif %}">Metadata</a></li>
+          <li><a href="{{ url_for('review') }}" class="{% if page_title == 'review' %}active{% endif %}">Review</a></li>
+          <li><a href="{{ url_for('category') }}" class="{% if page_title == 'category' %}active{% endif %}">Category</a></li>
+          <li><a href="{{ url_for('finalizeSubmission') }}" class="{% if page_title == 'finalizeSubmission' %}active{% endif %}">Finalize Submission</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
+  
   
 
   <section class="content" style="margin-left: 210px;">
@@ -74,6 +138,44 @@
         {% endif %}
       </div>
   </footer>
+  
+  <script >
 
+    document.addEventListener('DOMContentLoaded', function () {
+      const categories = document.querySelectorAll('.category-toggle');
+      const links = document.querySelectorAll('.left-sidebar a');
+      const activeCategoryIndex = getActiveCategory();
+    
+      // Function to close all categories
+    
+      // Open the category containing the active link
+      if (activeCategoryIndex >= 0) {
+        categories[activeCategoryIndex].classList.add('active');
+        categories[activeCategoryIndex].nextElementSibling.classList.add('active');
+      }
+    
+      categories.forEach((category) => {
+        category.addEventListener('click', function () {
+          this.classList.toggle('active');
+          this.nextElementSibling.classList.toggle('active');
+          closeAllCategories(this);
+        });
+      });
+    
+      links.forEach((link) => {
+        link.addEventListener('click', function () {
+          links.forEach((otherLink) => otherLink.classList.remove('active'));
+          this.classList.add('active');
+    
+          const currentCategory = this.closest('.category');
+          closeAllCategories(currentCategory.querySelector('.category-toggle'));
+    
+          currentCategory.querySelector('.category-toggle').classList.add('active');
+          currentCategory.querySelector('.category-links').classList.add('active');
+        });
+      });
+    });
+    
+  </script>
   </body>
 </html>
