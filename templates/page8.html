@@ -1,5 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div id='page8_header'>
+    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" style="width: 350px; padding-top: 10px;">
+</div>
 
+<label id="title">
+ <div id="as_author"><p>
+    <input value="1" name="is_author" type="checkbox">&nbsp;I certify that I previewed my paper<br>
+ </p></div>
 {% endblock %}

@@ -306,7 +306,7 @@ em.boxed {
 #header h1 {
 	margin: 0;
 	font-size: 1em;
-	padding: 0 0 .2em 20px;
+	padding: 0 0 .2em 5px;
 	font-weight: bold;
 	font-style: normal;
 	}
