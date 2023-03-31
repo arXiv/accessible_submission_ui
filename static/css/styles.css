@@ -338,3 +338,36 @@ input,
 label {
   display: block;
 }
+
+/* page 12 */
+.checkmark-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.checkmark-list li {
+  position: relative;
+  padding: 1vh 1vw;
+}
+
+.checkmark-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 2;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #5ecb6b;
+  color: #f1f1f1;
+  border-radius: 25px;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.checkmark-list a {
+  padding-left: 8px;
+}
