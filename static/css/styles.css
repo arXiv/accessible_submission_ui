@@ -317,7 +317,8 @@ form label {
   display: flex;
 }
 
-input {
+.metadata {
+  display: block;
   width: calc(2 / 3 * 100vw);
   height: 6vh;
   min-width: 200px;
@@ -331,13 +332,14 @@ input {
 }
 
 input#abstract {
+  display: block;
   height: 12vh;
 }
 
-input,
+/* input,
 label {
   display: block;
-}
+} */
 
 /* page 12 */
 .checkmark-list {
@@ -370,4 +372,13 @@ label {
 
 .checkmark-list a {
   padding-left: 8px;
+}
+
+.html-preview {
+  width: calc(2 / 3 * 100vw);
+  min-width: 200px;
+  max-width: 100%;
+  background-color: #dfdede;
+  padding: 4vh 4vw;
+  margin-top: 8vh;
 }
