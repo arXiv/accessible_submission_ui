@@ -91,7 +91,7 @@
   <nav class="left-sidebar" style="width: 210px">
     <ul>
       <li class="category">
-        <a href="#" class="category-toggle">Category 1</a>
+        <a href="#" class="category-toggle">Start</a>
         <ul class="category-links" style="margin-left: 30px;">
           <li><a href="{{ url_for('start') }}" class="{% if page_title == 'start' %}active{% endif %}">Start</a></li>
           <li><a href="{{ url_for('contactInformation') }}" class="{% if page_title == 'contactInformation' %}active{% endif %}">Contact Information</a></li>
@@ -100,7 +100,7 @@
         </ul>
       </li>
       <li class="category">
-        <a href="#" class="category-toggle">Category 2</a>
+        <a href="#" class="category-toggle">Files</a>
         <ul class="category-links" style="margin-left: 30px;">
           <li><a href="{{ url_for('addFiles') }}" class="{% if page_title == 'addFiles' %}active{% endif %}">Add Files</a></li>
           <li><a href="{{ url_for('processing') }}" class="{% if page_title == 'processing' %}active{% endif %}">Processing</a></li>
@@ -109,11 +109,16 @@
         </ul>
       </li>
       <li class="category">
-        <a href="#" class="category-toggle" >Category 3</a>
+        <a href="#" class="category-toggle" >Metadata</a>
         <ul class="category-links" style="margin-left: 30px;">
-          <li><a href="{{ url_for('metadata') }}" class="{% if page_title == 'metadata' %}active{% endif %}">Metadata</a></li>
-          <li><a href="{{ url_for('review') }}" class="{% if page_title == 'review' %}active{% endif %}">Review</a></li>
+          <li><a href="{{ url_for('metadata') }}" class="{% if page_title == 'metadata' %}active{% endif %}">Input Data</a></li>
           <li><a href="{{ url_for('category') }}" class="{% if page_title == 'category' %}active{% endif %}">Category</a></li>
+          <li><a href="{{ url_for('review') }}" class="{% if page_title == 'review' %}active{% endif %}">Metadata Review</a></li>
+        </ul>
+      </li>
+      <li class="category">
+        <a href="#" class="category-toggle" >Finalize Submission</a>
+        <ul class="category-links" style="margin-left: 30px;">
           <li><a href="{{ url_for('finalizeSubmission') }}" class="{% if page_title == 'finalizeSubmission' %}active{% endif %}">Finalize Submission</a></li>
         </ul>
       </li>
