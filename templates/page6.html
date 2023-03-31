@@ -1,5 +1,55 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
+<h1>Submission Processing</h1>
+<p>
+  Please review the processing errors. You can visit the
+  <a href="#">arXiv help page</a> if needed.
+</p>
 
-{% block content %}
+<div class="process-div">
+  <div>
+    <h1>Submission Status: <span class="highlight">success</span></h1>
+  </div>
+  <div>
+    <button id="full-log" type="button">Explore full log</button>
+  </div>
+</div>
 
+<div class="process-wrap">
+  <div class="process-element" id="process-severe">
+    <h2>Severe Processing errors/warnings:</h2>
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+    </ol>
+  </div>
+  <div class="process-element" id="process-important">
+    <h2>Important Processing errors/warnings:</h2>
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+    </ol>
+  </div>
+  <div class="process-element" id="process-general">
+    <h2>General Processing errors/warnings:</h2>
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+    </ol>
+  </div>
+  <div class="process-element" id="process-unimportant">
+    <h2>Unimportant Processing errors/warnings:</h2>
+    <ol>
+      <li>item 1</li>
+      <li>item 2</li>
+    </ol>
+  </div>
+</div>
+
+<div class="process-element" id="processed">
+  <h2>List of processed elements</h2>
+  <ol>
+    <li>item 1</li>
+    <li>item 2</li>
+  </ol>
+</div>
 {% endblock %}
