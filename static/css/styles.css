@@ -372,6 +372,19 @@ form label {
   border: none;
 }
 
+/* page 8 */
+.secondary {
+  background-color: #424BB2;
+  color: #f1f1f1;
+  font-size: medium;
+  padding: 24px 8px;
+  width: 160px;
+  height: 64px;
+  margin: 4vh auto;
+  border: none;
+  border-radius: 4px;
+}
+
 /* page 9 */
 .container {
   max-width: 100%;

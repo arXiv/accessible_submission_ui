@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id='page8_header'>
-    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" style="width: 350px; padding-top: 10px;">
+<h1>HTML Preview</h1>
+<p>arXiv now offers an HTML version of your paper, which may appear different from the PDF version but provides <b>greater accessibility</b> to people with disabilities.</p>
+<br>
+<p>We encourage you to <b>review the HTML version of your paper and share feedback with us,</b> so we can continue to improve and make our community more inclusive. Thank you for helping us make academic journals more accessible to everyone.</p>
+<br>
+<p>You can <a href="">click here</a> to open the HTML page in a different tab.</p>
+<br>
+<button class="secondary" type="button">Explore full log</button>
+<div class="checkbox-item">
+  <input type="checkbox" id="preview-check" name="preview-check" />
+  <label for="preview-check">I certified I previewed my paper</label>
+  
 </div>
-
-<label id="title">
- <div id="as_author"><p>
-    <input value="1" name="is_author" type="checkbox">&nbsp;I certify that I previewed my paper<br>
- </p></div>
 {% endblock %}
