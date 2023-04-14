@@ -1,3 +1,21 @@
-{% extends 'base.html' %} {% block content %}
-<p>test</p>
+{% extends 'base.html' %} 
+{% block content %}
+<h1>Check Data</h1>
+<ul>
+    <li>Review the abstract data displayed on this page. Edit metadata as necessary.</li>
+    <li>Check your primary category selection under "Categories" and resolve any conflicts before proceeding. Review arXiv categories on the category taxonomy page.</li>
+    <li>View your article by clicking the button. (required)</li>
+    <li>Add secondary categories and crosslists. (optional)</li>
+    <li>When you are satisfied that your submission is ready, (and after viewing the article), click the "Submit Article" button below. (Depending on your browser settings, you may need to refresh the page to see the "Submit Article" button)</li>
+    <li>You may revise your submission until freeze time. Unsubmitted articles are retained for two weeks.</li>
+    <li><a href="">MathJax</a> will render inline ($-enclosed) TEX in the title, abstract and comments fields (e.g. $P(E) = {n \choose k} p^k (1-p)^{ n-k}$ becomes P(E)=(nk)pk(1−p)n−k). Errors or unknown macros are displayed in red. <a href="">Disable MathJax</a>.</li>
+</ul>
+<div class="html-preview">
+  <div id="preview">Preview</div>
+  <h1>Title</h1>
+  <p>Authors</p>
+  <p>This is where the abstract is displayed.</p>
+  <br />
+  <p>Abstract</p>
+</div>
 {% endblock %}
