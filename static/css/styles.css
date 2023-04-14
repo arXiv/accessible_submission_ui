@@ -33,9 +33,9 @@
   margin-left: 0px;
 }
 
-.logo-text{
+.logo-text {
   font-size: 20px;
-  margin-left: 10px; 
+  margin-left: 10px;
 }
 
 .navbar {
@@ -63,13 +63,13 @@ body {
   position: relative;
   margin-left: 0px;
   margin-right: 0px;
-  margin-top:0px;
+  margin-top: 0px;
 }
 
-.content{
-  margin-left: 30px;
+.content {
+  margin-left: 20px;
   margin-right: 0px;
-  margin-top:0px;
+  margin-top: 0px;
 }
 
 .report-btn {
@@ -141,7 +141,7 @@ footer {
 
 .next-button {
   color: white;
-  background-color: #D58B25;
+  background-color: #d58b25;
   border: none;
   padding: 10px 20px;
   text-align: center;
@@ -206,60 +206,60 @@ form label {
 }
 
 #contact-info ul {
-  list-style: none; 
-  margin: 0; 
-  padding: 0; 
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 #contact-info li {
-  display: flex; 
-  align-items: center; 
-  margin-bottom: 10px; 
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
 #contact-info li strong {
-  display: inline-block; 
+  display: inline-block;
   width: 150px;
-  margin-right: 10px; 
+  margin-right: 10px;
   text-decoration: underline;
 }
 
-.checkbox-container{
-  display:flex;
-  align-items:center;
-  margin-bottom:20px;
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.arrow{
-  margin-left:10px;
+.arrow {
+  margin-left: 10px;
 }
 
 .privacy {
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .privacy .arrow {
-  cursor: pointer; 
+  cursor: pointer;
   /* display: flex; */
   /* align-items: center; */
 }
 
 .privacy .arrow i {
-  margin-right: 10px; 
-  transition: transform 0.3s ease-in-out; 
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
 }
 
 .privacy .policy {
-  display: none; 
-  margin-top: 10px; 
+  display: none;
+  margin-top: 10px;
 }
 
 .privacy.open .arrow i {
-  transform: rotate(180deg); 
+  transform: rotate(180deg);
 }
 
 .privacy.open .policy {
-  display: block; 
+  display: block;
 }
 
 .policy-box {
@@ -272,11 +272,10 @@ form label {
   overflow-y: auto;
 }
 
-.check-arrow{
-  display:flex;
+.check-arrow {
+  display: flex;
   align-items: center;
 }
-
 
 .modal {
   display: none;
@@ -287,7 +286,7 @@ form label {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
@@ -310,4 +309,137 @@ form label {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+/* page 6 */
+.process-div {
+  width: 84vw;
+  min-width: 200px;
+  max-width: 100%;
+  background-color: #dfdede;
+  padding: 2vh 1vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border: 4px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.process-wrap {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.process-element {
+  padding: 2vh 2vw;
+  margin-bottom: 16px;
+  width: calc(0.5 * 100vw);
+  min-width: 200px;
+  max-width: 90%;
+}
+
+#process-severe {
+  border: 4px solid red;
+}
+
+#process-important {
+  border: 4px solid orange;
+}
+
+#process-general {
+  border: 4px solid yellow;
+}
+
+#process-unimportant {
+  border: 4px solid grey;
+}
+
+#processed {
+  border: 4px solid black;
+  width: 80%;
+}
+
+.highlight {
+  background-color: yellow;
+}
+
+#full-log {
+  background-color: #b31b1b;
+  color: #f1f1f1;
+  padding: 8px 20px;
+  border: none;
+}
+
+/* page 9 */
+.container {
+  max-width: 100%;
+  display: flex;
+}
+
+.metadata {
+  display: block;
+  width: calc(2 / 3 * 100vw);
+  height: 6vh;
+  min-width: 200px;
+  max-width: 100%;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 2vh;
+  padding: 0 1vw;
+}
+
+input#abstract {
+  display: block;
+  height: 12vh;
+}
+
+/* input,
+label {
+  display: block;
+} */
+
+/* page 12 */
+.checkmark-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.checkmark-list li {
+  position: relative;
+  padding: 1vh 1vw;
+}
+
+.checkmark-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 2;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  background-color: #5ecb6b;
+  color: #f1f1f1;
+  border-radius: 25px;
+  padding: 4px 8px;
+  font-size: 12px;
+  margin-left: 2px;
+}
+
+.checkmark-list a {
+  padding-left: 8px;
+}
+
+.html-preview {
+  width: calc(2 / 3 * 100vw);
+  min-width: 200px;
+  max-width: 100%;
+  background-color: #dfdede;
+  padding: 4vh 4vw;
+  margin-top: 8vh;
 }

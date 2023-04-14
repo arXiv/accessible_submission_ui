@@ -6,6 +6,62 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/arXivCat.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}" />
+    <style>
+      
+      .category-links {
+        display: none;
+      }
+      
+      .category-toggle {
+        cursor: pointer;
+      }
+      
+      .category-toggle::before {
+        content: '+';
+        display: inline-block;
+        margin-right: 5px;
+      }
+      
+      .category-toggle.active::before {
+        content: '-';
+      }
+      
+      .category-links.active {
+        display: block;
+      }
+
+      .left-sidebar {
+        margin-top: 91.7px;
+        box-sizing: border-box;
+      }
+    
+      
+    </style>
+    <script>
+      function getActiveCategory() {
+        const pageTitle = "{{ page_title }}";
+        switch (pageTitle) {
+          case "start":
+          case "contactInformation":
+          case "termsConditions":
+          case "licensing":
+            return 0;
+          case "addFiles":
+          case "processing":
+          case "pdfPreview":
+          case "htmlPreview":
+            return 1;
+          case "metadata":
+          case "category":
+          case "review":
+          case "finalizeSubmission":
+            return 2;
+          default:
+            return -1;
+        }
+      }
+    </script>
 
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/selectCombo.js') }}"></script>
@@ -14,9 +70,10 @@
     <script src="{{ url_for('static', filename='js/toggle-guide.js') }}"></script>
     <script src="{{ url_for('static', filename='js/terms_conditions.js') }}"></script>
     <script src="{{ url_for('static', filename='js/example.js') }}"></script>
-    </head>
   </head>
 
+<body>
+<header>
   <div id="cu-identity">
     <div id="cu-logo">
       <a href="https://www.cornell.edu/"><img src="//static.arxiv.org/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" border="0"></a>
@@ -36,23 +93,48 @@
       </div>
     </h1>
   </div>
+</header>
 
-  <div class="navbar">
-    <a class="{% if page_title == 'start' %}active{% endif %}" href="{{ url_for('start') }}">Start</a>
-    <a class="{% if page_title == 'contactInformation' %}active{% endif %}" href="{{ url_for('contactInformation') }}">Contact Information</a>
-    <a class="{% if page_title == 'termsConditions' %}active{% endif %}" href="{{ url_for('termsConditions') }}">Terms and Conditions</a>
-    <a class="{% if page_title == 'licensing' %}active{% endif %}" href="{{ url_for('licensing') }}">Licensing</a>
-    <a class="{% if page_title == 'addFiles' %}active{% endif %}" href="{{ url_for('addFiles') }}">Add Files</a>
-    <a class="{% if page_title == 'processing' %}active{% endif %}" href="{{ url_for('processing') }}">Processing</a>
-    <a class="{% if page_title == 'pdfPreview' %}active{% endif %}" href="{{ url_for('pdfPreview') }}">PDF Preview</a>
-    <a class="{% if page_title == 'htmlPreview' %}active{% endif %}" href="{{ url_for('htmlPreview') }}">HTML Preview</a>
-    <a class="{% if page_title == 'metadata' %}active{% endif %}" href="{{ url_for('metadata') }}">Metadata</a>
-    <a class="{% if page_title == 'review' %}active{% endif %}" href="{{ url_for('review') }}">Review</a>
-    <a class="{% if page_title == 'category' %}active{% endif %}" href="{{ url_for('category') }}">Category</a>
-    <a class="{% if page_title == 'finalizeSubmission' %}active{% endif %}" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a>
-  </div>
+  <nav class="left-sidebar">
+    <ul>
+      <li class="category">
+        <a href="#" class="category-toggle">Start</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('start') }}" class="{% if page_title == 'start' %}active{% endif %}">Start</a></li>
+          <li><a href="{{ url_for('contactInformation') }}" class="{% if page_title == 'contactInformation' %}active{% endif %}">Contact Information</a></li>
+          <li><a href="{{ url_for('termsConditions') }}" class="{% if page_title == 'termsConditions' %}active{% endif %}">Terms and Conditions</a></li>
+          <li><a href="{{ url_for('licensing') }}" class="{% if page_title == 'licensing' %}active{% endif %}">Licensing</a></li>
+        </ul>
+      </li>
+      <li class="category">
+        <a href="#" class="category-toggle">Files</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('addFiles') }}" class="{% if page_title == 'addFiles' %}active{% endif %}">Add Files</a></li>
+          <li><a href="{{ url_for('processing') }}" class="{% if page_title == 'processing' %}active{% endif %}">Processing</a></li>
+          <li><a href="{{ url_for('pdfPreview') }}" class="{% if page_title == 'pdfPreview' %}active{% endif %}">PDF Preview</a></li>
+          <li><a href="{{ url_for('htmlPreview') }}" class="{% if page_title == 'htmlPreview' %}active{% endif %}">HTML Preview</a></li>
+        </ul>
+      </li>
+      <li class="category">
+        <a href="#" class="category-toggle" >Metadata</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('metadata') }}" class="{% if page_title == 'metadata' %}active{% endif %}">Input Data</a></li>
+          <li><a href="{{ url_for('category') }}" class="{% if page_title == 'category' %}active{% endif %}">Category</a></li>
+          <li><a href="{{ url_for('review') }}" class="{% if page_title == 'review' %}active{% endif %}">Metadata Review</a></li>
+        </ul>
+      </li>
+      <li class="category">
+        <a href="#" class="category-toggle" >Finalize Submission</a>
+        <ul class="category-links" style="margin-left: 30px;">
+          <li><a href="{{ url_for('finalizeSubmission') }}" class="{% if page_title == 'finalizeSubmission' %}active{% endif %}">Finalize Submission</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  
+  
 
-  <section class="content">
+  <section class="content" style="margin-left: 220px;">
     {% block content %}{% endblock %}
   </section>
 
@@ -70,6 +152,44 @@
         {% endif %}
       </div>
   </footer>
+  
+  <script >
 
+    document.addEventListener('DOMContentLoaded', function () {
+      const categories = document.querySelectorAll('.category-toggle');
+      const links = document.querySelectorAll('.left-sidebar a');
+      const activeCategoryIndex = getActiveCategory();
+    
+      // Function to close all categories
+    
+      // Open the category containing the active link
+      if (activeCategoryIndex >= 0) {
+        categories[activeCategoryIndex].classList.add('active');
+        categories[activeCategoryIndex].nextElementSibling.classList.add('active');
+      }
+    
+      categories.forEach((category) => {
+        category.addEventListener('click', function () {
+          this.classList.toggle('active');
+          this.nextElementSibling.classList.toggle('active');
+          closeAllCategories(this);
+        });
+      });
+    
+      links.forEach((link) => {
+        link.addEventListener('click', function () {
+          links.forEach((otherLink) => otherLink.classList.remove('active'));
+          this.classList.add('active');
+    
+          const currentCategory = this.closest('.category');
+          closeAllCategories(currentCategory.querySelector('.category-toggle'));
+    
+          currentCategory.querySelector('.category-toggle').classList.add('active');
+          currentCategory.querySelector('.category-links').classList.add('active');
+        });
+      });
+    });
+    
+  </script>
   </body>
 </html>

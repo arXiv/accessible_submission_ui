@@ -1,5 +1,46 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<h1>Check Data</h1>
+<p>
+  Please fill out the required fields signaled by an asterisk before continuing.
+</p>
+
+<p>
+  Review the abstract data displayed on this page. Edit metadata as necessary.
+</p>
+<ol>
+  <li>
+    Check your primary category selection under "Categories" and resolve any
+    conflicts before proceeding.
+    <a href="https://arxiv.org/category_taxonomy"
+      >Review arXiv categories on the category taxonomy page</a
+    >.
+  </li>
+  <li>View your article by clicking the button. (required)</li>
+  <li>Add secondary categories and crosslists. (optional)</li>
+  <li>
+    When you are satisfied that your submission is ready, (and after viewing the
+    article), click the "Submit Article" button below. (Depending on your
+    browser settings, you may need to refresh the page to see the "Submit
+    Article" button)
+  </li>
+  <li>
+    You may revise your submission until freeze time. Unsubmitted articles are
+    retained for two weeks.
+  </li>
+  <li>
+    MathJax will render inline ($-enclosed) TEX in the title, abstract and
+    comments fields (e.g. $P(E) = {n \choose k} p^k (1-p)^{ n-k}$ becomes
+    P(E)=(nk)pk(1−p)n−k). Errors or unknown macros are displayed in red.
+    <a href="#">Disable MathJax</a>.
+  </li>
+</ol>
+
+<div class="html-preview">
+  <h1>Title</h1>
+  <p>Authors</p>
+  <br />
+  <p>Abstract</p>
+</div>
 
 {% endblock %}

@@ -1,5 +1,56 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<h1>Enter Metadata</h1>
+<p>
+  Please fill out the required fields signaled by an asterisk before continuing.
+</p>
 
+<form action="/submit" method="post">
+  <div style="float: left; margin-right: 20px">
+    <label for="abstract" required>
+      *Abstract (<a href="#" style="color: blue">Review Abstract Statement</a>)
+    </label>
+    <input
+      class="metadata"
+      type="text"
+      id="abstract"
+      name="abstract"
+      placeholder="Please type your abstract here"
+    />
+  </div>
+  <div style="float: left; margin-right: 20px">
+    <label for="author" required>
+      *Author (<a href="#" style="color: blue">Review Author Requirements</a>)
+    </label>
+    <input
+      class="metadata"
+      type="text"
+      id="author"
+      name="author"
+      placeholder="Author names. First names first; do not use et al.; separate with commas or 'and'"
+    />
+  </div>
+  <div style="float: left; margin-right: 20px">
+    <label for="comment">
+      Comments (<a href="#" style="color: blue">Review Comment Help</a>)
+    </label>
+    <input
+      class="metadata"
+      type="text"
+      id="comment"
+      name="comment"
+      placeholder="Optional. Please type your comments here (like number of figures, etc)"
+    />
+  </div>
+  <div style="float: left; margin-right: 20px">
+    <label for="number"> Report number </label> <br />
+    <input
+      class="metadata"
+      type="text"
+      id="report-number"
+      name="report-number"
+      placeholder="Optional. Please type your report number."
+    />
+  </div>
+</form>
 {% endblock %}

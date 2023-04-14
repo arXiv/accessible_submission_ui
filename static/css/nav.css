@@ -1,0 +1,56 @@
+.left-sidebar {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 210px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e1e1e1;
+}
+
+.left-sidebar a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #000;
+}
+
+.category-links {
+  display: none;
+  padding-left: 30px; /* Increase this value to add more indentation */
+}
+
+.category-toggle {
+  cursor: pointer;
+}
+
+.category-toggle::before {
+  content: '+';
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.category-toggle.active::before {
+  content: '-';
+}
+
+.category-links.active {
+  display: block;
+}
+
+.left-sidebar a.active {
+  background-color: #f0f0f0;
+}
+
+.left-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.left-sidebar li {
+  display: block;
+  margin: 0;
+  padding: 5px 0;
+}

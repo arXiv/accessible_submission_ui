@@ -11,8 +11,8 @@ page_titles = {
     'page7': 'pdfPreview',
     'page8': 'htmlPreview',
     'page9': 'metadata',
-    'page10': 'review',
-    'page11': 'category',
+    'page10': 'category',
+    'page11': 'review',
     'page12': 'finalizeSubmission',
 }
 
@@ -54,12 +54,12 @@ def metadata():
     return render_template('page9.html', page_titles=page_titles, page_title=page_titles['page9'],prev_page=page_titles['page8'],next_page=page_titles['page10'])
 
 
-@app.route('/review/')
-def review():
-    return render_template('page10.html', page_titles=page_titles, page_title=page_titles['page10'],prev_page=page_titles['page9'],next_page=page_titles['page11'])
-
 @app.route('/category/')
 def category():
+    return render_template('page10.html', page_titles=page_titles, page_title=page_titles['page10'],prev_page=page_titles['page9'],next_page=page_titles['page11'])
+
+@app.route('/review/')
+def review():
     return render_template('page11.html', page_titles=page_titles, page_title=page_titles['page11'],prev_page=page_titles['page10'],next_page=page_titles['page12'])
 
 @app.route('/finalizeSubmission/')
