@@ -8,35 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/arXivCat.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}" />
     <style>
-      
-      .category-links {
-        display: none;
-      }
-      
-      .category-toggle {
-        cursor: pointer;
-      }
-      
-      .category-toggle::before {
-        content: '+';
-        display: inline-block;
-        margin-right: 5px;
-      }
-      
-      .category-toggle.active::before {
-        content: '-';
-      }
-      
-      .category-links.active {
-        display: block;
-      }
-
-      .left-sidebar {
-        margin-top: 91.7px;
-        box-sizing: border-box;
-      }
-    
-      
+  
     </style>
     <script>
       function getActiveCategory() {
@@ -73,69 +45,65 @@
   </head>
 
 <body>
-<header>
-  <div id="cu-identity">
-    <div id="cu-logo">
-      <a href="https://www.cornell.edu/"><img src="//static.arxiv.org/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" border="0"></a>
-    </div>
-    <div id="support-ack">
-      <a href="https://confluence.cornell.edu/x/ALlRF">We gratefully acknowledge support from<br> the Simons Foundation and member institutions.</a>
-    </div>
-  </div>
-
-  <div id="header" >
-    <h1 class="arxiv-logo">
-      <a href="/">
-      <img class='logo' src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"></a> &gt; submit </h1>
-      <div class="header_nav">Logged in as <b>fake</b> |
-        <a href="/help">Help</a> |
-        <a href="/user">My Account</a> |        <a href="/logout">Logout</a>
+  <header>
+    <div id="cu-identity">
+      <div id="cu-logo">
+        <a href="https://www.cornell.edu/"><img src="//static.arxiv.org/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" border="0"></a>
       </div>
-    </h1>
-  </div>
-</header>
+      <div id="support-ack">
+        <a href="https://confluence.cornell.edu/x/ALlRF">We gratefully acknowledge support from<br> the Simons Foundation and member institutions.</a>
+      </div>
+    </div>
 
-  <nav class="left-sidebar">
-    <ul>
-      <li class="category">
-        <a href="#" class="category-toggle">Start</a>
-        <ul class="category-links" style="margin-left: 30px;">
-          <li><a href="{{ url_for('start') }}" class="{% if page_title == 'start' %}active{% endif %}">Start</a></li>
-          <li><a href="{{ url_for('contactInformation') }}" class="{% if page_title == 'contactInformation' %}active{% endif %}">Contact Information</a></li>
-          <li><a href="{{ url_for('termsConditions') }}" class="{% if page_title == 'termsConditions' %}active{% endif %}">Terms and Conditions</a></li>
-          <li><a href="{{ url_for('licensing') }}" class="{% if page_title == 'licensing' %}active{% endif %}">Licensing</a></li>
-        </ul>
-      </li>
-      <li class="category">
-        <a href="#" class="category-toggle">Files</a>
-        <ul class="category-links" style="margin-left: 30px;">
-          <li><a href="{{ url_for('addFiles') }}" class="{% if page_title == 'addFiles' %}active{% endif %}">Add Files</a></li>
-          <li><a href="{{ url_for('processing') }}" class="{% if page_title == 'processing' %}active{% endif %}">Processing</a></li>
-          <li><a href="{{ url_for('pdfPreview') }}" class="{% if page_title == 'pdfPreview' %}active{% endif %}">PDF Preview</a></li>
-          <li><a href="{{ url_for('htmlPreview') }}" class="{% if page_title == 'htmlPreview' %}active{% endif %}">HTML Preview</a></li>
-        </ul>
-      </li>
-      <li class="category">
-        <a href="#" class="category-toggle" >Metadata</a>
-        <ul class="category-links" style="margin-left: 30px;">
-          <li><a href="{{ url_for('metadata') }}" class="{% if page_title == 'metadata' %}active{% endif %}">Input Data</a></li>
-          <li><a href="{{ url_for('category') }}" class="{% if page_title == 'category' %}active{% endif %}">Category</a></li>
-          <li><a href="{{ url_for('review') }}" class="{% if page_title == 'review' %}active{% endif %}">Metadata Review</a></li>
-        </ul>
-      </li>
-      <li class="category">
-        <a href="#" class="category-toggle" >Finalize Submission</a>
-        <ul class="category-links" style="margin-left: 30px;">
-          <li><a href="{{ url_for('finalizeSubmission') }}" class="{% if page_title == 'finalizeSubmission' %}active{% endif %}">Finalize Submission</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+    <div id="header" >
+      <h1 class="arxiv-logo">
+        <a href="/">
+        <img class='logo' src="https://static.arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" aria-label="logo" alt="arxiv logo" width="85" style="width:85px;"></a> &gt; submit </h1>
+        <div class="header_nav">Logged in as <b>fake</b> |
+          <a href="/help">Help</a> |
+          <a href="/user">My Account</a> |        <a href="/logout">Logout</a>
+        </div>
+      </h1>
+    </div>
+  </header>
   
   
-
-  <section class="content" style="margin-left: 220px;">
-    {% block content %}{% endblock %}
+  <section class="content" style="margin-left: 0px;">
+    <nav>
+      <ul>
+        <li class="category"><a id="start-link" class="category-toggle" href="#">Start</a>
+          <ul class="category-links">
+            <li><a id="start-sublink" href="{{ url_for('start') }}" class="sublist">Start</a></li>
+            <li><a id="contact-link" href="{{ url_for('contactInformation') }}">Contact Information</a></li>
+            <li><a id="terms-link" href="{{ url_for('termsConditions') }}">Terms and Conditions</a></li>
+            <li><a id="licensing-link" href="{{ url_for('licensing') }}">Licensing</a></li>
+          </ul>
+        </li>
+        <li class="category"><a id="files-link" class="category-toggle" href="#">Files</a>
+          <ul class="category-links">
+            <li><a id="add-files-link" href="{{ url_for('addFiles') }}">Add Files</a></li>
+            <li><a id="processing-link" href="{{ url_for('processing') }}">Processing</a> </li>
+            <li><a id="pdf-preview-link" href="{{ url_for('pdfPreview') }}">PDF Preview</a></li>
+            <li><a id="html-preview-link" href="{{ url_for('htmlPreview') }}">HTML Preview</a></li>
+          </ul>
+        </li>
+        <li class="category"><a id="metadata-link" class="category-toggle" href="#">Metadata</a>
+          <ul class="category-links">
+            <li><a id="input-data-link" href="{{ url_for('metadata') }}">Input Data</a></li>
+            <li><a id="category-link" href="{{ url_for('category') }}">Category</a> </li>
+            <li><a id="review-link" href="{{ url_for('review') }}">Metadata Review</a></li>
+          </ul>
+        </li>
+        <li class="category"><a id="finalize-link" class="category-toggle" href="#">Finalize Submission</a>
+          <ul class="category-links">
+            <li><a id="finalize-submission-link" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>    
+    <div class="main-content">   
+      {% block content %}{% endblock %}
+    </div>
   </section>
 
   <footer>
@@ -189,6 +157,15 @@
         });
       });
     });
+
+    let links = document.querySelectorAll('.category-links li a');
+    links.forEach(link => {
+      if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+    });
+
+    
     
   </script>
   </body>
