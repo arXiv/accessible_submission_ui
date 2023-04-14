@@ -1,41 +1,101 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Check Data</h1>
+<h1>Select Category</h1>
 <p>
-  Please fill out the required fields signaled by an asterisk before continuing.
+  At arXiv articles get filed into categories. Please review the description of
+  the categories. Failure to provide the best-fitting category may delay the
+  submission process. Please note that this <b>does not guarantee</b> your
+  submission appearing in the selected category.
 </p>
 
+<div class="select-category-container">
+  <div class="select-category-item">
+    <label class="select-label" for="archive-select">*Archive</label>
+    <select class="selector">
+      <option value="computer_science" selected>Computer Science</option>
+    </select>
+  </div>
+
+  <div class="select-category-item">
+    <label class="select-label" for="primary-select">*Primary</label>
+    <select class="selector">
+      <option value="machine learning" selected>Machine Learning</option>
+    </select>
+  </div>
+
+  <div class="select-category-item">
+    <label class="select-label" for="secondary-select">Secondary</label>
+    <select class="selector">
+      <option value="secondary_optional" selected>Secondary (Optional)</option>
+    </select>
+  </div>
+</div>
+
 <p>
-  Review the abstract data displayed on this page. Edit metadata as necessary.
+  You can learn more about categories below or visit the
+  <a href="">category descriptions</a>.
 </p>
-<ol>
-  <li>
-    Check your primary category selection under "Categories" and resolve any
-    conflicts before proceeding.
-    <a href="https://arxiv.org/category_taxonomy"
-      >Review arXiv categories on the category taxonomy page</a
-    >.
-  </li>
-  <li>View your article by clicking the button. (required)</li>
-  <li>Add secondary categories and crosslists. (optional)</li>
-  <li>
-    When you are satisfied that your submission is ready, (and after viewing the
-    article), click the "Submit Article" button below. (Depending on your
-    browser settings, you may need to refresh the page to see the "Submit
-    Article" button)
-  </li>
-  <li>
-    You may revise your submission until freeze time. Unsubmitted articles are
-    retained for two weeks.
-  </li>
-  <li>
-    MathJax will render inline ($-enclosed) TEX in the title, abstract and
-    comments fields (e.g. $P(E) = {n \choose k} p^k (1-p)^{ n-k}$ becomes
-    P(E)=(nk)pk(1−p)n−k). Errors or unknown macros are displayed in red.
-    <a href="#">Disable MathJax</a>.
-  </li>
-</ol>
 
+<div class="categories">
+  <button class="accordion">Computer Science</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
 
+  <button class="accordion">Economics</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
 
+  <button class="accordion">Electrical Engineering and Systems Science</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Mathematics</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Physics</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Quantitative Biology</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Quantitative Finance</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+
+  <button class="accordion">Statistics</button>
+  <div class="panel">
+    <p>Lorem ipsum...</p>
+  </div>
+</div>
+
+<script>
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function () {
+      /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+      this.classList.toggle("accordion-active");
+
+      /* Toggle between hiding and showing the active panel */
+      var panel = this.nextElementSibling;
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
+  }
+</script>
 {% endblock %}
