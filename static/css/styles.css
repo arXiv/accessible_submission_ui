@@ -385,6 +385,12 @@ form label {
   border-radius: 4px;
 }
 
+.h1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
 /* page 9 */
 .container {
   max-width: 100%;
@@ -441,7 +447,7 @@ label {
   border-radius: 25px;
   padding: 4px 8px;
   font-size: 12px;
-  margin-left: 2px;
+  margin-left: 8px;
 }
 
 .checkmark-list a {
