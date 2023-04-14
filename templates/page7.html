@@ -1,14 +1,19 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<div id='page7_header'>
-    <img src="{{ url_for('static', filename='images/placeholder.jpeg') }}" style="width: 350px; padding-top: 10px;">
+{% extends 'base.html' %} {% block content %}
+<div class="h1-container">
+  <h1>PDF Preview</h1>
 </div>
 
-<label id="title">
- <div id="as_author"><p>
-    <input value="1" name="is_author" type="checkbox">&nbsp;I certify that I previewed my paper<br>
- </p></div>
+<p>
+  We have successfully generated a PDF version of your paper. Please take the
+  time to review it and revise your original documents if there's any concerns.
+</p>
+<p>You can <a href="">click here</a> to download the current PDF submission.</p>
+<br />
+<br />
+<button class="secondary" type="button">Preview PDF</button>
+<div class="checkbox-item">
+  <input type="checkbox" id="preview-check" name="preview-check" />
+  <label for="preview-check">I certified I previewed my paper</label>
+</div>
 
 {% endblock %}
