@@ -30,6 +30,11 @@
       .category-links.active {
         display: block;
       }
+
+      .left-sidebar {
+        margin-top: 91.7px;
+        box-sizing: border-box;
+      }
     
       
     </style>
@@ -65,9 +70,10 @@
     <script src="{{ url_for('static', filename='js/toggle-guide.js') }}"></script>
     <script src="{{ url_for('static', filename='js/terms_conditions.js') }}"></script>
     <script src="{{ url_for('static', filename='js/example.js') }}"></script>
-    </head>
   </head>
 
+<body>
+<header>
   <div id="cu-identity">
     <div id="cu-logo">
       <a href="https://www.cornell.edu/"><img src="//static.arxiv.org/icons/cu/cornell-reduced-white-SMALL.svg" alt="Cornell University" width="200" border="0"></a>
@@ -87,8 +93,9 @@
       </div>
     </h1>
   </div>
+</header>
 
-  <nav class="left-sidebar" style="width: 200px">
+  <nav class="left-sidebar">
     <ul>
       <li class="category">
         <a href="#" class="category-toggle">Start</a>
@@ -127,7 +134,7 @@
   
   
 
-  <section class="content" style="margin-left: 210px;">
+  <section class="content" style="margin-left: 220px;">
     {% block content %}{% endblock %}
   </section>
 
