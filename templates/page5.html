@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id='page4_header'>
+    <h1>Upload a File</h1>
+    <p> Your submission to the archive must be in one of the following formats (listed in order of preference):</p>
+    <ul>
+        <li>(La)TeX, AMS(La)TeX, PDFLaTeX</li>
+        <li>PDF (not generated from TeX)</li>
+        <li>HTML for conference proceeding indexes</li>
+      </ul>
+    <p>For more information please visit <a href="https://info.arxiv.org/help/submit/index.html">submission files</a> for help and further information about the accepted types of files.It is the author's responsibility to choose the right license.</p>
+</div>
+
+<label for="file-upload" class="file-upload-label">
+    Drag and drop files here or click to browse
+  </label>
+  <input id="file-upload" type="file" multiple>
+
+<!--
+<form onsubmit="return disable(this);" action="https://arxiv.org/submit/4812052/addfiles" enctype="multipart/form-data" method="post">
+    <div id="multimulti">
+      <input type="hidden" name="form_submit" value="yes">
+      <input id="fileinput" class="multi" name="file" type="file" size="40"><br>
+    </div>
+    <div>
+      <input class="whbutton" type="submit" value="Upload file" name="uploadButton">
+    </div>
+  <script type="text/javascript">
+  //<![CDATA[
+    function disable(theForm) {
+      if (document.all || document.getElementById) {
+        var formLength = (theForm ? theForm.length : 0);
+        for (i = 0; i < formLength; i++) {
+          var tempObj = theForm.elements[i];
+          if (tempObj.type.toLowerCase() == "submit" || tempObj.type.toLowerCase() == "reset")
+            tempObj.disabled = true;
+          }
+        }
+      return true;
+    }
+  //]]>
+  </script>
+  </form>
+-->
+{% endblock %}

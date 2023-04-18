@@ -1,0 +1,150 @@
+
+/***************************************
+*    Define error box styles
+***************************************/
+div#error {
+	margin: 5px;
+	padding: 10px;
+	width: 550px;
+	background-color: lightgoldenrodyellow;
+	border-width: 1px;
+	border-style: solid;	
+}	
+
+/****************************************
+ * Table styles
+ * *************************************/
+
+table.tbcss
+{ text-align: center;
+	font-family: Verdana;
+	font-weight: normal;
+	color: #404040;
+/*	width: 900px;*/
+	background-color: #fafafa;
+	border: 1px #3a4b6d solid;
+	border-collapse: collapse;
+	border-spacing: 0px; }
+
+/* following style for emphasis of one cell */
+table.tbcss td.sel
+{
+	background-color: #FFCCCC;
+}
+
+td.tbhead
+{ border-bottom: 2px solid #3a4b6d;
+	border-left: 1px solid #3a4b6d;
+	background-color: #CCC;
+	text-align: left;
+	text-indent: 5px;
+	font-family: Verdana;
+	font-weight: bold;
+	color: #404040; }
+
+td.tbbod,td.tbbod_odd
+{ border-bottom: 1px solid #3a4b6d;
+	border-top: 0px;
+	border-left: 1px solid #3a4b6d;
+	border-right: 0px;
+   margin-right: 1em;
+	text-align: left;
+    padding: 4px;
+	font-family: Verdana, sans-serif, Arial;
+	font-weight: normal;
+	color: #404040;
+}
+
+td.tbbod {
+    background-color: #FAFAFA;
+}
+
+td.tbbod_odd {
+    background-color: #F2F2F2;
+}
+
+a.linkbutton {
+    border: 2px solid #6e6e6e;
+    border-style: double;
+    padding: 3px;
+    background-color: #eee;
+}
+
+.greybutton {
+  border: 2px solid #6e6e6e;
+  border-style: double;
+  padding: 3px;
+  background-color: #eee;
+}
+
+.mlabel, .mglabel {
+  font-weight: bold;
+  text-align: right;
+  margin-right: 1em;
+  display: block;
+}
+.mglabel {
+   color: #909090;
+} 
+.mglabel a:link, .mglabel a:visited, .mglabel a:active {
+        text-decoration: none;
+        color: #909090;
+        }
+.mglabel a:hover {
+   text-decoration: underline;
+}
+.mlabel a:link, .mlabel a:visited, .mlabel a:active {
+        text-decoration: none;
+        color: #000000;
+        }
+.mlabel a:hover {
+   text-decoration: underline;
+}
+
+.mvalue, .mgvalue {
+   font-weight: normal;
+}
+.mgvalue {
+   color: #909090;
+}
+
+.message, .error {
+#    min-height: 20px;
+    font-size: 110%;
+    border: 2px solid #B31B1B;
+    padding: 3px;
+    background: #efefef;
+}
+
+/* Following are for admin/user/view page */
+
+label {
+  float: left:
+  text-align: right;
+  margin-right: 0.2em;
+  display: block;
+}
+.label {
+    font-weight: bold;
+}
+
+span.underline {
+    text-decoration: underline;
+}
+
+span.boldblack {
+    font-weight: bold;
+    color: black;
+}
+
+/* proposals */
+.proposal_notice
+{
+    background:URL('/images/green_exclamation.png') left bottom; 
+    width:16px; 
+    height:16px;
+    padding-right:4px;
+    background-repeat:no-repeat;
+    display:block;
+    float:left;
+}

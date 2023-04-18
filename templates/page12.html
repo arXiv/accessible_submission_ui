@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Congratulations, you are almost done!</h1>
+<p>
+  Great job for making this far! Please take some time to review all information
+  you have inputted and make sure it is correct.
+</p>
+
+<ul class="checkmark-list">
+  <li><a href="{{ url_for('contactInformation') }}">Contact Information</a></li>
+  <li>
+    <a href="{{ url_for('termsConditions') }}">Terms and conditions</a>
+  </li>
+  <li><a href="{{ url_for('licensing') }}">Licensing</a></li>
+  <li><a href="{{ url_for('addFiles') }}">Files</a></li>
+  <li><a href="{{ url_for('pdfPreview') }}">PDF preview</a></li>
+  <li>
+    <a href="{{ url_for('htmlPreview') }}">HTML preview</a>
+    <div class="chip">
+      <span>Beta</span>
+    </div>
+  </li>
+  <li><a href="{{ url_for('metadata') }}">Metadata</a></li>
+</ul>
+
+<div class="checkbox-item">
+  <input type="checkbox" id="preview-check" name="preview-check" />
+  <label for="preview-check">I certified I previewed my paper</label>
+</div>
+
+{% endblock %}
