@@ -66,7 +66,7 @@ nav a {
   text-decoration: none;
 }
 
-.sublist a.active{
+.sublist a.active {
   text-decoration: underline;
 }
 
@@ -98,13 +98,13 @@ nav li.category ul.category-links li a.active {
 }
 
 .category-toggle::before {
-  content: '+';
+  content: "+";
   display: inline-block;
   margin-right: 5px;
 }
 
 .category-toggle.active::before {
-  content: '-';
+  content: "-";
 }
 
 .category-links.active {
@@ -124,10 +124,6 @@ nav a.active {
   margin-left: 10px;
   flex-grow: 1;
 }
-
-
-
-
 
 body {
   position: relative;
@@ -442,6 +438,25 @@ form label {
   border: none;
 }
 
+/* page 8 */
+.secondary {
+  background-color: #424bb2;
+  color: #f1f1f1;
+  font-size: medium;
+  padding: 24px 8px;
+  width: 160px;
+  height: 64px;
+  margin: 4vh auto;
+  border: none;
+  border-radius: 4px;
+}
+
+.h1-container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
 /* page 9 */
 .container {
   max-width: 100%;
@@ -472,6 +487,73 @@ label {
   display: block;
 } */
 
+/* page 10 */
+.select-category-item {
+  margin: 20px 0;
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+}
+
+.select-label {
+  margin-right: 16px;
+}
+
+.selector {
+  padding: 12px 4px;
+  padding-right: 40px;
+  border-color: #d1d1d1;
+  border-radius: 4px;
+  border-width: 2px;
+  font-size: 16px;
+}
+
+.categories {
+  margin-top: 32px;
+  max-width: 98%;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  font-size: 16px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.accordion-active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+/* page 11 */
+#preview {
+  background-color: #f24726;
+  color: #f1f1f1;
+  position: absolute;
+  bottom: 90%;
+  width: 200px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 4px;
+}
+
 /* page 12 */
 .checkmark-list {
   list-style-type: none;
@@ -498,7 +580,7 @@ label {
   border-radius: 25px;
   padding: 4px 8px;
   font-size: 12px;
-  margin-left: 2px;
+  margin-left: 8px;
 }
 
 .checkmark-list a {
@@ -512,4 +594,5 @@ label {
   background-color: #dfdede;
   padding: 4vh 4vw;
   margin-top: 8vh;
+  position: relative;
 }
