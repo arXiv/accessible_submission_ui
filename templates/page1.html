@@ -1,23 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div id='page1_header'>
+<html lang="en">
+<div id='page1_header' aria-label='Header'>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}" />
-    <h1>Welcome to arXiv submission!</h1>
-    <p> Note: You may pause in the submission process at any stage and return to your submission from your user page at <a href="https://arxiv.org/user">https://arxiv.org/user</a></p>
-    <p>To start your submission please provide the title of your paper and the author(s) name(s).</p>
+    <h1 aria-label='Page heading'>Welcome to arXiv submission!</h1>
+    <p aria-label='Note'>Note: You may pause in the submission process at any stage and return to your submission from your user page at <a href="https://arxiv.org/user"><u>https://arxiv.org/user</u></a></p>
+    <p aria-label='Page description'>To start your submission please provide the title of your paper and the author(s) name(s).</p>
 </div>
 
-<label id="title">
-  <strong>*Title</strong>
-</label>: (<a onclick="target='subhelp'" href="https://info.arxiv.org/help/prep.html#title" title="Click for help on Title field">Review title requirements</a>)
+<label for="title" id="title" >
+  <strong>Title*</strong>
+</label>(<a onclick="target='subhelp'" href="https://info.arxiv.org/help/prep.html#title" title="Click for help on Title field"><u>Review title requirements</u></a>)<br>
 <input type="text" id="input_title" name="title" placeholder="Please provide the title of your page" maxlength="100" required>
 
-<div id="as_author"><p>
-  <input value="0" style="display:none" name="is_author" type="radio">
-  <input checked="checked" value="1" name="is_author" type="radio">&nbsp;I am submitting as an author of this article<br>
-  <input value="2" name="is_author" type="radio">&nbsp;I am not an author but have obtained pre-authorization from arXiv to submit as
-  a <a href="https://info.arxiv.org/help/third_party_submission.html">third-party submitter</a><br>
-</p></div>
+<div id="as_author">
+  <p>
+    <input aria-labelledby="is_author" value="0" style="display:none" name="is_author" type="radio">
+    <input checked="checked" value="1" name="is_author" type="radio">&nbsp;I am submitting as an author of this article<br>
+    <input aria-labelledby="is_third_party" value="2" name="is_author" type="radio">&nbsp;I am not an author but have obtained pre-authorization from arXiv to submit as
+    a third-party submitter. <a href="https://info.arxiv.org/help/third_party_submission.html"><u>Learn more</u></a><br>
+  </p>
+</div>
 
+</html>
 {% endblock %}

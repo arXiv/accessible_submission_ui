@@ -17,7 +17,7 @@
 
 /* Style the red banner */
 .banner-red {
-  background-color: #b31b1b;
+  background-color: #A21A1A;
   align-items: center;
 }
 
@@ -72,8 +72,9 @@ nav a {
 
 nav li.category a.category-toggle.active,
 nav li.category ul.category-links li a.active {
-  color: orange;
+  color: rgb(0, 0, 0);
   text-decoration: underline;
+  font-weight:bold;
 }
 
 nav li.category a.category-toggle.active {
@@ -81,7 +82,7 @@ nav li.category a.category-toggle.active {
 }
 
 nav li.category ul.category-links li a.active {
-  border-left: 3px solid orange;
+  border-left: 3px solid rgb(162, 22, 22);
 }
 
 .category-links {
@@ -130,6 +131,7 @@ body {
   margin-left: 0px;
   margin-right: 0px;
   margin-top: 0px;
+  line-height: 26px;
 }
 
 .content {
@@ -192,9 +194,9 @@ footer {
 }
 
 .back-button {
-  color: gray;
+  color: rgb(0, 0, 0);
   background-color: white;
-  border: 2px solid gray;
+  border: 2px solid rgb(0, 0, 0);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -206,9 +208,9 @@ footer {
 }
 
 .next-button {
-  color: white;
-  background-color: #d58b25;
-  border: none;
+
+  background-color: #ADE1B0;
+  border: 2px solid rgb(0, 0, 0);
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
@@ -334,8 +336,8 @@ form label {
   padding: 10px;
   margin-bottom: 20px;
   margin-right: 100px;
-  height: 200px;
-  overflow-y: auto;
+  height: 240px;
+  overflow-y: scroll;
 }
 
 .check-arrow {
@@ -432,7 +434,7 @@ form label {
 }
 
 #full-log {
-  background-color: #b31b1b;
+  background-color: #A21A1A;
   color: #f1f1f1;
   padding: 8px 20px;
   border: none;
@@ -575,7 +577,7 @@ label {
 .chip {
   display: inline-flex;
   align-items: center;
-  background-color: #5ecb6b;
+  background-color: #A21A1A;
   color: #f1f1f1;
   border-radius: 25px;
   padding: 4px 8px;

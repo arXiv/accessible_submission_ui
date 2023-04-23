@@ -3,15 +3,16 @@
 <!-- haven't build the modal -->
 
 {% block content %}
+<html lang="en">
 <div id='page4_header'>
     <h1>Choose a License</h1>
     <p> All articles and source files posted on arXiv.org can be viewed and downloaded by anyone.</p>
     <p>Please select the license you would like to use to make your content available. Your chosen license is irrevocable. For all licenses here, except CC Zero, the original copyright holder retains ownership after posting on arXiv.</p>
-    <p>Please review our <a class="openTerms" tabindex="0" style="color:blue;">licensing table <span class="sr-only"></span></a> and/or <a href="https://info.arxiv.org/help/license/index.html">license information</a>. It is the author's responsibility to choose the right license.</p>
+    <p>Please review our <a class="openTerms" tabindex="0" style="color:blue;"><u>licensing table</u> <span class="sr-only"></span></a> and/or <a href="https://info.arxiv.org/help/license/index.html"><u>license information</u></a>. It is the author's responsibility to choose the right license.</p>
 </div>
 
 <!--the content inside need to be modified-->
-<div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+<div class="modal micromodal-slide" id="modal-1" aria-hidden="false">
   <div class="modal__overlay" tabindex="-1" data-micromodal-close="">
     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
       <main class="modal__content" id="modal-1-content">
@@ -127,5 +128,5 @@
     </label>
     <p>If you need help with the licensing please contact us at a</p>
   </form>-->
-
+</html>
 {% endblock %}

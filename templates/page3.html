@@ -1,25 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<html lang="en">
 <div id='page3_header'>
     <h1>Please Review our Terms and Conditions</h1>
 </div>
 
 <form>
-    <p>Read and agree to the full <a href="https://arxiv.org/help/policies/instructions_for_submission" target="_blank">Instructions for Submission <span class="sr-only">(opens in a new tab)</span></a> before proceeding</p>
+    <p>Read and agree to the full <a href="https://arxiv.org/help/policies/instructions_for_submission" target="_blank"><u>Instructions for Submission <span class="sr-only">(opens in a new tab)</u></span></a> before proceeding</p>
     <p><input name="agree_policy" type="checkbox">
         I have read and agree to the Instructions for Submission
     </p>
 
     <div class="check-arrow">
-        <p>Read and accept the <a href="#privacy" class="terms-link">Submission Terms and Agreement</a> (opens a new window) before proceeding * 
+        <p>Read and accept the <a href="#privacy" class="terms-link"><u>Submission Terms and Agreement</u></a> (opens a new window) before proceeding * 
         </p>
         <div class="arrow">
             <i class="fas fa-chevron-down"></i>
         </div>
     </div>
     <div class="privacy">
-        <div class="policy-box">
+        <div class="policy-box"  tabindex="0">
         <h2>Submission Terms and Agreement</h2>
         <p>Any person submitting a work for deposit in arXiv is required to assent to the following terms and conditions. The Submitter is an original author of the Work, or a proxy pre-approved by arXiv administrators acting on behalf of an original author. If the Submitter is signing and accepting the terms on behalf of another individual, the Submitter represents and warrants that the Submitter has been granted the authority to make the submittal by that individual and that the Submitter's acceptance of the terms binds that other individual.</p>
   
@@ -106,5 +107,5 @@
     
   </form>
   -->
-
+</html>
 {% endblock %}
