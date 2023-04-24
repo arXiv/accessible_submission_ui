@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block content %}
+<html lang="en">
 <div class="h1-container">
   <h1>PDF Preview</h1>
 </div>
@@ -7,7 +8,7 @@
   We have successfully generated a PDF version of your paper. Please take the
   time to review it and revise your original documents if there's any concerns.
 </p>
-<p>You can <a href="">click here</a> to download the current PDF submission.</p>
+<p>You can <a href=""><u>click here</u></a> to download the current PDF submission.</p>
 <br />
 <br />
 <button class="secondary" type="button">Preview PDF</button>
@@ -15,5 +16,5 @@
   <input type="checkbox" id="preview-check" name="preview-check" />
   <label for="preview-check">I certified I previewed my paper</label>
 </div>
-
+</html>
 {% endblock %}
