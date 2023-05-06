@@ -43,13 +43,14 @@
   background-color: #f0f0f0;
 }
 
-.left-sidebar ul {
+.left-sidebar ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .left-sidebar li {
+  list-style: none;
   display: block;
   margin: 0;
   padding: 5px 0;

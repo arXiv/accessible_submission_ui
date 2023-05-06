@@ -71,18 +71,23 @@ nav a {
 }
 
 nav li.category a.category-toggle.active,
-nav li.category ul.category-links li a.active {
+nav li.category ol.category-links li a.active {
   color: rgb(0, 0, 0);
   text-decoration: underline;
   font-weight:bold;
+  list-style:none;
 }
 
 nav li.category a.category-toggle.active {
   font-weight: bold;
 }
 
-nav li.category ul.category-links li a.active {
+nav li.category ol.category-links li a.active {
   border-left: 3px solid rgb(162, 22, 22);
+}
+
+ol {
+  list-style:none;
 }
 
 .category-links {
@@ -113,11 +118,11 @@ nav li.category ul.category-links li a.active {
 }
 
 li a.active {
-  color: orange;
+  color: rgb(162, 22, 22);
 }
 
 nav a.active {
-  color: orange;
+  color: rgb(162, 22, 22);
   text-decoration: underline;
 }
 
@@ -602,4 +607,9 @@ label {
 
 h3 {
   line-height: 0%;
+}
+
+.supporting {
+  font-size:70%;
+  color:rgb(65, 65, 65);
 }

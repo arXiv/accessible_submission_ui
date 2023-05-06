@@ -27,9 +27,10 @@
           case "metadata":
           case "category":
           case "review":
-          case "finalizeSubmission":
             return 2;
-          default:
+          case "finalizeSubmission":
+            return 3;
+          defaolt:
             return -1;
         }
       }
@@ -68,38 +69,40 @@
   </header>
   
   
-  <section class="content" style="margin-left: 0px;">
+  <main class="content" style="margin-left: 0px;">
     <nav>
-      <ul>
+      <ol>
         <li class="category"><a id="start-link" class="category-toggle" href="#">Start</a>
-          <ul class="category-links">
+          <ol class="category-links">
             <li><a id="start-sublink" href="{{ url_for('start') }}" class="sublist">Start</a></li>
             <li><a id="contact-link" href="{{ url_for('contactInformation') }}">Contact Information</a></li>
             <li><a id="terms-link" href="{{ url_for('termsConditions') }}">Terms and Conditions</a></li>
             <li><a id="licensing-link" href="{{ url_for('licensing') }}">Licensing</a></li>
-          </ul>
+          </ol>
         </li>
         <li class="category"><a id="files-link" class="category-toggle" href="#">Files</a>
-          <ul class="category-links">
+          <ol class="category-links">
             <li><a id="add-files-link" href="{{ url_for('addFiles') }}">Add Files</a></li>
             <li><a id="processing-link" href="{{ url_for('processing') }}">Processing</a> </li>
             <li><a id="pdf-preview-link" href="{{ url_for('pdfPreview') }}">PDF Preview</a></li>
             <li><a id="html-preview-link" href="{{ url_for('htmlPreview') }}">HTML Preview</a></li>
-          </ul>
+          </ol>
         </li>
         <li class="category"><a id="metadata-link" class="category-toggle" href="#">Metadata</a>
-          <ul class="category-links">
+          <ol class="category-links">
             <li><a id="input-data-link" href="{{ url_for('metadata') }}">Input Data</a></li>
             <li><a id="category-link" href="{{ url_for('category') }}">Category</a> </li>
             <li><a id="review-link" href="{{ url_for('review') }}">Metadata Review</a></li>
-          </ul>
+          </ol>
         </li>
         <li class="category"><a id="finalize-link" class="category-toggle" href="#">Finalize Submission</a>
-          <ul class="category-links">
+          <ol class="category-links">
             <li><a id="finalize-submission-link" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a></li>
-          </ul>
+          </ol>
         </li>
-      </ul>
+        <!-- <li class="category"><a id="finalize-link" class="category-toggle" href="{{ url_for('finalizeSubmission') }}">Finalize Submission</a>
+        </li> -->
+      </ol>
     </nav>    
     <div class="main-content">   
       {% block content %}{% endblock %}
