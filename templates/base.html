@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/arXivCat.css') }}" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <style>
   
     </style>
@@ -36,6 +37,7 @@
       }
     </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
     <script src="{{ url_for('static', filename='js/selectCombo.js') }}"></script>
     <script src="{{ url_for('static', filename='js/submitSubjClass.js') }}"></script>
@@ -43,6 +45,7 @@
     <script src="{{ url_for('static', filename='js/toggle-guide.js') }}"></script>
     <script src="{{ url_for('static', filename='js/terms_conditions.js') }}"></script>
     <script src="{{ url_for('static', filename='js/example.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/validation.js') }}"></script>
   </head>
 
 <body>
@@ -112,14 +115,14 @@
   <footer>
       <div class="button-container">
         {% if prev_page %}
-          <a href="{{url_for(prev_page)}}" class="back-button">Back</a>
+          <a href="{{url_for(prev_page)}}" class="btn btn-primary back-button" id='backBtn'>Back</a>
         {% else %}
-          <a class="back-button">Cancel</a>
+          <a class="btn btn-primary back-button" id='backBtn'>Cancel</a>
         {% endif %}
         {% if next_page %}
-          <a href="{{url_for(next_page)}}" class="next-button">Continue</a>
+          <a href="{{url_for(next_page)}}" class="btn btn-primary next-button disabled" id='nextBtn'>Continue</a>
         {% else %}
-          <a href="" class="next-button">Submit</a>
+          <a href="" class="btn btn-primary next-button disabled" id='nextBtn'>Submit</a>
         {% endif %}
       </div>
   </footer>

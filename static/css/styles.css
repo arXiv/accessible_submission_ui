@@ -48,6 +48,7 @@ nav {
   width: 300px;
   background-color: #f2f2f2;
   flex-shrink: 0;
+  margin-right: 20px;
 }
 
 nav ul {
@@ -198,7 +199,7 @@ footer {
   justify-content: space-between;
 }
 
-.back-button {
+a.btn.btn-primary.back-button {
   color: rgb(0, 0, 0);
   background-color: white;
   border: 2px solid rgb(0, 0, 0);
@@ -212,8 +213,12 @@ footer {
   margin-right: 5px;
 }
 
-.next-button {
+a.btn.btn-primary.back-button:hover {
+  background-color: #c9c9c9;
+  color: rgb(0, 0, 0);
+}
 
+a.btn.btn-primary.next-button {
   background-color: #ADE1B0;
   border: 2px solid rgb(0, 0, 0);
   padding: 10px 20px;
@@ -224,6 +229,24 @@ footer {
   border-radius: 5px;
   cursor: pointer;
 }
+
+a.btn.btn-primary.next-button.disabled{
+  background-color: #879188;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+a.btn.btn-primary.next-button:hover {
+  background-color: #57a060;
+  color: white;
+}
+
 
 .breadcrumb {
   font-size: 1rem;

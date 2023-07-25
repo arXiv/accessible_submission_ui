@@ -13,10 +13,16 @@
     <p>For more information please visit <a href="https://info.arxiv.org/help/submit/index.html"><u>submission files</u></a> for help and further information about the accepted types of files.It is the author's responsibility to choose the right license.</p>
 </div>
 
+<!--
 <label for="file-upload" class="file-upload-label">
     Drag and drop files here or click to browse
-  </label>
-  <input id="file-upload" type="file" multiple>
+  </label>-->
+  <div class="mb-3">
+    <label for="formFile" class="form-label">Drag and drop files here or click to browse</label>
+    <input class="form-control" type="file" id="formFile">
+  </div>
+  <!--
+  <input id="file-upload" type="file" multiple>-->
 
 <!--
 <form onsubmit="return disable(this);" action="https://arxiv.org/submit/4812052/addfiles" enctype="multipart/form-data" method="post">
