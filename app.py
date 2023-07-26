@@ -17,7 +17,7 @@ page_titles = {
 }
 
 
-@app.route('/start/')
+@app.route('/')
 def start():
     return render_template('page1.html', page_titles=page_titles, page_title=page_titles['page1'],prev_page=None,next_page=page_titles['page2'])
 
