@@ -1,58 +1,8 @@
-/* 
-
-Function for testing.
-
-*/
-
-// Special: Function to update the error display based on the input value
-function checkCAPS() {
-    var errorDiv = document.getElementById('errorCAPS');
-    var correctDiv = document.getElementById('correctCAPS')
-    var title = paperTitleInput.value;
-    if (title === title.toUpperCase()) {
-        errorDiv.classList.add('d-block');
-        correctDiv.classList.remove('d-block');
-        paperTitleInput.classList.add('is-invalid');
-        NextBtnStatus(false);
-    } else {
-        errorDiv.classList.remove('d-block');
-        correctDiv.classList.add('d-block');
-        paperTitleInput.classList.remove('is-invalid');
-        NextBtnStatus(true);
-    }
-}
-
-function areAllCheckboxesChecked() {
-    for (var i = 0; i < certifyCheckboxes.length; i++) {
-        if (!certifyCheckboxes[i].checked) {
-            return false; // If any checkbox is not checked, return false
-        }
-    }
-    return true; // If all checkboxes are checked, return true
-}
-
-function isAnyRadioButtonSelected() {
-    if (licenseRadios.length == 0) {
-        return true;
-    }
-    for (var i = 0; i < licenseRadios.length; i++) {
-        if (licenseRadios[i].checked) {
-            return true; // If any radio button is selected, return true
-        }
-    }
-    return false; // If no radio button is selected, return false
-}
-
-function isFileUploaded() {
-    if (!fileInput) {
-        return true;
-    }
-    if (fileInput.value) {
-        return true;
-    } else {
-        return false;
-    }
-}
+/**
+ * 
+ * 
+ * 
+ */
 
 function isrequiredFilled(){
     if(!requiredInputs){
@@ -66,17 +16,11 @@ function isrequiredFilled(){
     return true; // If all required inputs are filled, return true
 }
 
-function isSelectorFilled(){
-    if(!selectors){
-        return true;
-    }
-    for (var i = 0; i < selectors.length; i++) {
-        if (!selectors[i].value) {
-            return false; // If any required input is empty, return false
-        }
-    }
-    return true; // If all required inputs are filled, return true
-}
+/* 
+
+Validation Functions.
+
+*/
 
 // Special: Function to check if the author name contains any phd(.etc) words
 function checkAuthors() {
@@ -112,9 +56,19 @@ function updateButtonStatus() {
     }
 }
 
+// General: Function to check if all checkboxes are checked
+function areAllCheckboxesChecked(certifyCheckboxes) {
+    for (var i = 0; i < certifyCheckboxes.length; i++) {
+        if (!certifyCheckboxes[i].checked) {
+            return false; // If any checkbox is not checked, return false
+        }
+    }
+    return true; // If all checkboxes are checked, return true
+}
+
 // Change the button status.
 function NextBtnStatus(ValidityState) {
-    // var nextBtn = document.getElementById('nextBtn');
+    //var nextBtn = document.getElementById('nextBtn');
     if (ValidityState) {
         nextBtn.classList.remove('disabled');
         nextBtn.setAttribute('aria-disabled', 'false');
@@ -124,6 +78,65 @@ function NextBtnStatus(ValidityState) {
     }
 }
 
+// Special: Detect Start Page Title.
+function checkStartPageTitles(paperTitleInput) {
+    var errorDiv = document.getElementById('errorCAPS');
+    var correctDiv = document.getElementById('correctCAPS');
+    var title = paperTitleInput.value;
+    console.log("Title: " + title);
+    if (title === title.toUpperCase()) {
+        errorDiv.classList.add('d-block');
+        correctDiv.classList.remove('d-block');
+        paperTitleInput.classList.add('is-invalid');
+        NextBtnStatus(false);
+    } else {
+        errorDiv.classList.remove('d-block');
+        correctDiv.classList.add('d-block');
+        paperTitleInput.classList.remove('is-invalid');
+        NextBtnStatus(true);
+    }
+}
+
+// General: check general input.
+// 1. Cannot All casps.
+// 2. No unresolved brackets/parenthesis.
+// 3. No extra spaces inside of brackets/parenthesis. (Just Warning)
+//    3a. add warning html elemnt for every input.(Later!) 
+function checkGeneralInput(input) {
+    if(input === input.toUpperCase()){
+        return false;
+    } else {
+        return true;
+    }
+}
+
+// General: Function to check if any radio button is selected
+function isAnyRadioButtonSelected(licenseRadio) {
+    if (licenseRadio.checked) {
+        return true; // If any radio button is selected, return true
+    }
+    return false; // If no radio button is selected, return false
+}
+
+// General: Function to check if a file is uploaded
+function isFileUploaded(fileInput) {
+    if (fileInput.value) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// General: Function to check if a selector is filled
+function isSelectorFilled(selectors){
+    for (var i = 0; i < selectors.length; i++) {
+        if (!selectors[i].value) {
+            return false; // If any required input is empty, return false
+        }
+    }
+    return true; // If all required inputs are filled, return true
+}
+
 /*
 
     Validation Function for each page.
@@ -131,45 +144,133 @@ function NextBtnStatus(ValidityState) {
 */
 
 function startValidation() {
-    console.log("nextBtn Test: " + nextBtn);
-    return;   
+    const paperTitleInput = document.getElementById('input_title');
+    // var paperTitleInputStatus = false;
+    if (paperTitleInput) {
+        console.log("find input_title");
+        paperTitleInput.addEventListener('input', function() {
+            checkStartPageTitles(paperTitleInput); // Pass paperTitleInput as an argument
+        });
+    }  
 }
 
 function contactInformationValidation() {
-    console.log("nextBtn Test: " + nextBtn);
-    return;
+    const certifyCheckboxes = document.querySelectorAll('.certify');
+    certifyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+           if(areAllCheckboxesChecked(certifyCheckboxes)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+      });
 }
 
 function termsConditionsValidation() {
-    return;
+    const certifyCheckboxes = document.querySelectorAll('.certify');
+    certifyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+           if(areAllCheckboxesChecked(certifyCheckboxes)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+      });
 }
 
 function licensingValidation() {
-    return;
+    const licenseRadios = document.querySelectorAll('.license-radio');
+    licenseRadios.forEach(radio => {
+        radio.addEventListener('change', function() {
+           if(isAnyRadioButtonSelected(radio)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+      });
+
 }
 
 function addFilesValidation() {
+    const fileInput = document.getElementById('formFile');
+    if (fileInput) {
+        fileInput.addEventListener('change', function() {
+            if(isFileUploaded(fileInput)){
+                NextBtnStatus(true);
+            }
+            else{
+                NextBtnStatus(false);
+            }
+        });
+    }
     return;
 }
 
 function pdfPreviewValidation() {
-    return;
+    const certifyCheckboxes = document.querySelectorAll('.certify');
+    certifyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+           if(areAllCheckboxesChecked(certifyCheckboxes)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+      });   
 }
 
 function htmlPreviewValidation() {
-    return;
+    const certifyCheckboxes = document.querySelectorAll('.certify');
+    certifyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+           if(areAllCheckboxesChecked(certifyCheckboxes)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+      });
 }
 
 function metadataValidation() {
     return;
 }
 
+// Need special id for html element. Not Completed.
 function categoryValidation() {
-    return;
+    const selectors = document.querySelectorAll('.selector');
+    selectors.forEach(selector => {
+        selector.addEventListener('change', function() {
+           if(isSelectorFilled(selectors)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+    });
 }
 
 function finalizeSubmissionValidation() {
-    return;
+    const certifyCheckboxes = document.querySelectorAll('.certify');
+    certifyCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+           if(areAllCheckboxesChecked(certifyCheckboxes)){
+               NextBtnStatus(true);
+           }
+           else{
+                NextBtnStatus(false);
+            }
+        });
+      });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -194,10 +295,14 @@ document.addEventListener("DOMContentLoaded", function () {
     'page12': 'finalizeSubmission',
     */
     switch (page.innerHTML) {
-        case "processing" || "review":
+        case "processing":
+            NextBtnStatus(true);
+            break;
+        case "review":
             NextBtnStatus(true);
             break;
         case "start":
+            console.log("Case: Start page");
             startValidation();
             break;
         case "contactInformation":
@@ -229,47 +334,5 @@ document.addEventListener("DOMContentLoaded", function () {
             break;
         default:
             console.log("Error: page not found!");
-    }
-
-    var paperTitleInput = document.getElementById('input_title');
-    var certifyCheckboxes = document.querySelectorAll('.certify');
-    var licenseRadios = document.querySelectorAll('.license-radio');
-    var fileInput = document.getElementById('formFile');
-    
-    var authorInput = document.getElementById('author');
-    var requiredInputs = document.querySelectorAll('.required');
-    var selectors = document.querySelectorAll('.selector');
-
-    // Add event listener to the input field to check for changes
-    if (paperTitleInput) {
-        paperTitleInput.addEventListener('input', checkCAPS);
-    }
-    // Add event listener to each checkbox to check for changes
-    if (certifyCheckboxes) {
-        certifyCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', updateButtonStatus);
-        });
-    }
-    if (licenseRadios) {
-        // Add event listener to each radio button to check for changes
-        licenseRadios.forEach(radio => {
-            radio.addEventListener('change', updateButtonStatus);
-        });
-    }
-    if (fileInput) {
-        fileInput.addEventListener('change', updateButtonStatus);
-    }
-    if (authorInput) {
-        authorInput.addEventListener('change', checkAuthors);
-    }
-    if(requiredInputs){
-        requiredInputs.forEach(input => {
-            input.addEventListener('change', updateButtonStatus);
-        });
-    }
-    if(selectors){
-        selectors.forEach(selector => {
-            selector.addEventListener('change', updateButtonStatus);
-        });
     }
 });
