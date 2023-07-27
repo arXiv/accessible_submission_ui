@@ -4,8 +4,8 @@
  * 
  */
 
-function isrequiredFilled(){
-    if(!requiredInputs){
+function isrequiredFilled() {
+    if (!requiredInputs) {
         return true;
     }
     for (var i = 0; i < requiredInputs.length; i++) {
@@ -24,7 +24,7 @@ Validation Functions.
 
 // Special: Function to check if the author name contains any phd(.etc) words
 function checkAuthors() {
-    if(!authorInput){
+    if (!authorInput) {
         return true;
     }
     var errorSymbol = authorInput.nextElementSibling;
@@ -48,7 +48,7 @@ function updateButtonStatus() {
     var anyFile = isFileUploaded();
     var requiredFilled = isrequiredFilled();
     var authorValid = checkAuthors();
-    var selectorValid= isSelectorFilled();
+    var selectorValid = isSelectorFilled();
     if (anySelected && allChecked && anyFile && requiredFilled && authorValid && selectorValid) {
         NextBtnStatus(true);
     } else {
@@ -80,20 +80,27 @@ function NextBtnStatus(ValidityState) {
 
 // Special: Detect Start Page Title.
 function checkStartPageTitles(paperTitleInput) {
-    var errorDiv = document.getElementById('errorCAPS');
-    var correctDiv = document.getElementById('correctCAPS');
     var title = paperTitleInput.value;
-    console.log("Title: " + title);
-    if (title === title.toUpperCase()) {
-        errorDiv.classList.add('d-block');
-        correctDiv.classList.remove('d-block');
-        paperTitleInput.classList.add('is-invalid');
+    const errorMsg = document.getElementById('errorMsg');
+    const correctMsg = document.getElementById('correctMsg');
+    //general
+    if(checkGeneralInput(title)){
+        if (!title.startsWith("Title")){
+            NextBtnStatus(true);
+            errorMsg.classList.remove('d-block');
+            correctMsg.classList.add('d-block');
+
+        }
+        else{
+            NextBtnStatus(false);
+            errorMsg.classList.add('d-block');
+            correctMsg.classList.remove('d-block');
+        }
+    }
+    else{
         NextBtnStatus(false);
-    } else {
-        errorDiv.classList.remove('d-block');
-        correctDiv.classList.add('d-block');
-        paperTitleInput.classList.remove('is-invalid');
-        NextBtnStatus(true);
+        errorMsg.classList.add('d-block');
+        correctMsg.classList.remove('d-block');
     }
 }
 
@@ -102,11 +109,78 @@ function checkStartPageTitles(paperTitleInput) {
 // 2. No unresolved brackets/parenthesis.
 // 3. No extra spaces inside of brackets/parenthesis. (Just Warning)
 //    3a. add warning html elemnt for every input.(Later!) 
+function checkCAPS(input) {
+    const uppercaseRegex = /^[^a-z]*[A-Z]+[^a-z]*$/;
+    return !uppercaseRegex.test(input);
+}
+
+//check unresolved brackets/parenthesis.
+function checkunsolvedbrackets(input) {
+    const bracketStack = [];
+    const unresolvedBrackets = [];
+    for (let i = 0; i < input.length; i++) {
+        const char = input.charAt(i);
+        if (char === '(' || char === '[') {
+            bracketStack.push({
+                char,
+                index: i
+            });
+        } else if (char === ')' || char === ']') {
+            if (bracketStack.length === 0) {
+                unresolvedBrackets.push({
+                    char,
+                    index: i
+                });
+            } else {
+                bracketStack.pop();
+            }
+        }
+    }
+    bracketStack.forEach((unresolvedBracket) => {
+        unresolvedBrackets.push(unresolvedBracket);
+    });
+
+    return unresolvedBrackets.length === 0;
+}
+
+//check extra spaces inside of brackets/parenthesis.
+function checkExtraSpaces(input) {
+    const pattern = /\([\s]+|\[\s+|\s+\)|\s+\]/g;
+    const matches = input.match(pattern);
+    if (matches) {
+        for (const match of matches) {
+        if (match.trim().length === 0) {
+            return false;
+        }
+        }
+    }
+    return true;
+}
+
+//check general input.
 function checkGeneralInput(input) {
-    if(input === input.toUpperCase()){
-        return false;
-    } else {
+    const capsValid = checkCAPS(input);
+    const unsolvedValid = checkunsolvedbrackets(input);
+    const extraSpacesValid = checkExtraSpaces(input);
+    /*console.log("capsValid: " + capsValid);
+    console.log("unsolvedValid: " + unsolvedValid);
+    console.log("extraSpacesValid: " + extraSpacesValid);*/
+    const errorExtraSpace = document.getElementById('errorExtraSpace');
+    if(extraSpacesValid){
+        //error Msg
+        //console.log("extraSpacesValid: " + extraSpacesValid);
+        errorExtraSpace.classList.remove('d-block');
+    }
+    else{
+        //warning Msg
+        //console.log("extraSpacesValid: " + extraSpacesValid);
+        errorExtraSpace.classList.add('d-block');
+    }
+    if (capsValid && unsolvedValid) {
         return true;
+    } else {
+        //show the error message.
+        return false;
     }
 }
 
@@ -128,7 +202,7 @@ function isFileUploaded(fileInput) {
 }
 
 // General: Function to check if a selector is filled
-function isSelectorFilled(selectors){
+function isSelectorFilled(selectors) {
     for (var i = 0; i < selectors.length; i++) {
         if (!selectors[i].value) {
             return false; // If any required input is empty, return false
@@ -147,64 +221,60 @@ function startValidation() {
     const paperTitleInput = document.getElementById('input_title');
     // var paperTitleInputStatus = false;
     if (paperTitleInput) {
-        console.log("find input_title");
-        paperTitleInput.addEventListener('input', function() {
+        //console.log("find input_title");
+        paperTitleInput.addEventListener('input', function () {
             checkStartPageTitles(paperTitleInput); // Pass paperTitleInput as an argument
         });
-    }  
+    }
 }
 
 function contactInformationValidation() {
     const certifyCheckboxes = document.querySelectorAll('.certify');
     certifyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-           if(areAllCheckboxesChecked(certifyCheckboxes)){
-               NextBtnStatus(true);
-           }
-           else{
+        checkbox.addEventListener('change', function () {
+            if (areAllCheckboxesChecked(certifyCheckboxes)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
-      });
+    });
 }
 
 function termsConditionsValidation() {
     const certifyCheckboxes = document.querySelectorAll('.certify');
     certifyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-           if(areAllCheckboxesChecked(certifyCheckboxes)){
-               NextBtnStatus(true);
-           }
-           else{
+        checkbox.addEventListener('change', function () {
+            if (areAllCheckboxesChecked(certifyCheckboxes)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
-      });
+    });
 }
 
 function licensingValidation() {
     const licenseRadios = document.querySelectorAll('.license-radio');
     licenseRadios.forEach(radio => {
-        radio.addEventListener('change', function() {
-           if(isAnyRadioButtonSelected(radio)){
-               NextBtnStatus(true);
-           }
-           else{
+        radio.addEventListener('change', function () {
+            if (isAnyRadioButtonSelected(radio)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
-      });
+    });
 
 }
 
 function addFilesValidation() {
     const fileInput = document.getElementById('formFile');
     if (fileInput) {
-        fileInput.addEventListener('change', function() {
-            if(isFileUploaded(fileInput)){
+        fileInput.addEventListener('change', function () {
+            if (isFileUploaded(fileInput)) {
                 NextBtnStatus(true);
-            }
-            else{
+            } else {
                 NextBtnStatus(false);
             }
         });
@@ -215,29 +285,27 @@ function addFilesValidation() {
 function pdfPreviewValidation() {
     const certifyCheckboxes = document.querySelectorAll('.certify');
     certifyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-           if(areAllCheckboxesChecked(certifyCheckboxes)){
-               NextBtnStatus(true);
-           }
-           else{
+        checkbox.addEventListener('change', function () {
+            if (areAllCheckboxesChecked(certifyCheckboxes)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
-      });   
+    });
 }
 
 function htmlPreviewValidation() {
     const certifyCheckboxes = document.querySelectorAll('.certify');
     certifyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-           if(areAllCheckboxesChecked(certifyCheckboxes)){
-               NextBtnStatus(true);
-           }
-           else{
+        checkbox.addEventListener('change', function () {
+            if (areAllCheckboxesChecked(certifyCheckboxes)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
-      });
+    });
 }
 
 function metadataValidation() {
@@ -248,11 +316,10 @@ function metadataValidation() {
 function categoryValidation() {
     const selectors = document.querySelectorAll('.selector');
     selectors.forEach(selector => {
-        selector.addEventListener('change', function() {
-           if(isSelectorFilled(selectors)){
-               NextBtnStatus(true);
-           }
-           else{
+        selector.addEventListener('change', function () {
+            if (isSelectorFilled(selectors)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
@@ -262,22 +329,20 @@ function categoryValidation() {
 function finalizeSubmissionValidation() {
     const certifyCheckboxes = document.querySelectorAll('.certify');
     certifyCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-           if(areAllCheckboxesChecked(certifyCheckboxes)){
-               NextBtnStatus(true);
-           }
-           else{
+        checkbox.addEventListener('change', function () {
+            if (areAllCheckboxesChecked(certifyCheckboxes)) {
+                NextBtnStatus(true);
+            } else {
                 NextBtnStatus(false);
             }
         });
-      });
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     // Get the page title.]
     const nextBtn = document.getElementById('nextBtn');
     const page = document.head.querySelector('title');
-    console.log("Load testing:" + page.innerHTML);
 
     // Title need to follow name in app.py! html title!
     /*
@@ -302,7 +367,6 @@ document.addEventListener("DOMContentLoaded", function () {
             NextBtnStatus(true);
             break;
         case "start":
-            console.log("Case: Start page");
             startValidation();
             break;
         case "contactInformation":
